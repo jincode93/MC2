@@ -70,6 +70,9 @@
 		3CFD272D2A10D9EB003B5C42 /* MusicStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFD272C2A10D9EB003B5C42 /* MusicStore.swift */; };
 		3CFD272F2A10DF70003B5C42 /* OMG.1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CFD272E2A10DF70003B5C42 /* OMG.1.mp3 */; };
 		3CFD27312A10DF77003B5C42 /* OMG.2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CFD27302A10DF77003B5C42 /* OMG.2.mp3 */; };
+		3CFEE08D2A122BB800C40E66 /* OMG.3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CFEE08C2A122BB800C40E66 /* OMG.3.mp3 */; };
+		3CFEE08F2A122BBE00C40E66 /* OMG.4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CFEE08E2A122BBE00C40E66 /* OMG.4.mp3 */; };
+		3CFEE0912A122BC400C40E66 /* OMG.5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CFEE0902A122BC400C40E66 /* OMG.5.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -131,6 +134,9 @@
 		3CFD272C2A10D9EB003B5C42 /* MusicStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicStore.swift; sourceTree = "<group>"; };
 		3CFD272E2A10DF70003B5C42 /* OMG.1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = OMG.1.mp3; sourceTree = "<group>"; };
 		3CFD27302A10DF77003B5C42 /* OMG.2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = OMG.2.mp3; sourceTree = "<group>"; };
+		3CFEE08C2A122BB800C40E66 /* OMG.3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = OMG.3.mp3; path = "../../../../../Downloads/음원/OMG.3.mp3"; sourceTree = "<group>"; };
+		3CFEE08E2A122BBE00C40E66 /* OMG.4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = OMG.4.mp3; path = "../../../../../Downloads/음원/OMG.4.mp3"; sourceTree = "<group>"; };
+		3CFEE0902A122BC400C40E66 /* OMG.5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = OMG.5.mp3; path = "../../../../../Downloads/음원/OMG.5.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +191,9 @@
 			isa = PBXGroup;
 			children = (
 				3C2150AB2A063909005F02D0 /* Preview Assets.xcassets */,
+				3CFEE0902A122BC400C40E66 /* OMG.5.mp3 */,
+				3CFEE08C2A122BB800C40E66 /* OMG.3.mp3 */,
+				3CFEE08E2A122BBE00C40E66 /* OMG.4.mp3 */,
 				3CF745A52A1222170013A5EE /* CameraGuide.mov */,
 				3CF7459E2A120DBA0013A5EE /* Lottie.json */,
 				3CFD27302A10DF77003B5C42 /* OMG.2.mp3 */,
@@ -438,13 +447,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CFEE08F2A122BBE00C40E66 /* OMG.4.mp3 in Resources */,
 				3CA3C87E2A1004AC0096CEC4 /* OMG.2.mov in Resources */,
 				3CFD27312A10DF77003B5C42 /* OMG.2.mp3 in Resources */,
 				3CFD272F2A10DF70003B5C42 /* OMG.1.mp3 in Resources */,
+				3CFEE08D2A122BB800C40E66 /* OMG.3.mp3 in Resources */,
 				3CF745A62A1222170013A5EE /* CameraGuide.mov in Resources */,
 				3C2150AC2A063909005F02D0 /* Preview Assets.xcassets in Resources */,
 				3C2150A92A063909005F02D0 /* Assets.xcassets in Resources */,
 				3CF7459F2A120DBA0013A5EE /* Lottie.json in Resources */,
+				3CFEE0912A122BC400C40E66 /* OMG.5.mp3 in Resources */,
 				3C21510B2A093F57005F02D0 /* GoogleService-Info.plist in Resources */,
 				3CA3C87C2A1004A40096CEC4 /* OMG.1.mov in Resources */,
 			);
@@ -633,7 +645,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MC2/Preview Content\"";
-				DEVELOPMENT_TEAM = 27567HRR46;
+				DEVELOPMENT_TEAM = B9U954AWHU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -665,7 +677,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MC2/Preview Content\"";
-				DEVELOPMENT_TEAM = 27567HRR46;
+				DEVELOPMENT_TEAM = B9U954AWHU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";

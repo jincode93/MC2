@@ -15,6 +15,7 @@ struct ContentView: View {
     @EnvironmentObject var userStore: UserStore
     @EnvironmentObject var cameraStore: CameraModel
     @EnvironmentObject var musicStore: MusicStore
+    @EnvironmentObject var videoStore: VideoStore
     
     var body: some View {
         ZStack {
@@ -35,6 +36,10 @@ struct ContentView: View {
                 GifView()
             case "page7":
                 SendToDBProgressView()
+            case "page8":
+                GalleryView()
+            case "signUpProgress":
+                SignUpProgressView()
             default:
                 Text("Error: Invalid Page")
             }
@@ -44,6 +49,7 @@ struct ContentView: View {
         .environmentObject(userStore)
         .environmentObject(musicStore)
         .environmentObject(cameraStore)
+        .environmentObject(videoStore)
         .onAppear {
             Task {
                 await danceStore.musicWillFetchDB()

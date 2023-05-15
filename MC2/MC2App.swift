@@ -25,6 +25,7 @@ struct MC2App: App {
     @StateObject var userStore = UserStore()
     @StateObject var cameraStore = CameraModel()
     @StateObject var musicStore = MusicStore()
+    @StateObject var videoStore = VideoStore()
     
     var body: some Scene {
         WindowGroup {
@@ -34,6 +35,7 @@ struct MC2App: App {
                 .environmentObject(userStore)
                 .environmentObject(cameraStore)
                 .environmentObject(musicStore)
+                .environmentObject(videoStore)
         }
     }
 }

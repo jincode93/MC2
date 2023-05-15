@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import AVKit
 
 struct CameraGuideView: View {
     @EnvironmentObject var cameraStore: CameraModel
+    @EnvironmentObject var videoStore: VideoStore
     
     var body: some View {
         GeometryReader { geo in
@@ -59,10 +61,27 @@ struct CameraGuideView: View {
                             .foregroundColor(.white)
                             .bold()
                         
-                        Image("CameraScript2")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: geo.size.width * 0.8)
+                        ZStack {
+                            if let player = videoStore.player {
+                                VideoPlayer(player: player)
+                                    //.scaledToFit()
+                                    .frame(width: geo.size.width * 0.52, height: geo.size.height * 0.43)
+                                    .padding(.bottom, geo.size.height * 0.05)
+                                    //.frame(maxWidth: geo.size.width * 0.54)
+                                    .zIndex(1)
+                            } else {
+                                Text("비디오 로딩을 실패했습니다.🥲")
+                                    .foregroundColor(.white)
+                                    .frame(maxWidth: geo.size.width * 0.7)
+                                    .cornerRadius(20)
+                                    .zIndex(1)
+                            }
+                            
+                            Image("CameraScript2")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: geo.size.width * 0.8)
+                        }
                         
                         Text("이전 동작을 유지한 상태에서\n다음 동작을 자연스럽게 연결해 보세요")
                             .foregroundColor(.white)
@@ -83,6 +102,12 @@ struct CameraGuideView: View {
                         }
                         
                         Spacer()
+                    }
+                    .onAppear {
+                        videoStore.play()
+                    }
+                    .onDisappear {
+                        videoStore.pause()
                     }
                 }
             }

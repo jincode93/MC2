@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SignUpView: View {
     @EnvironmentObject var userStore: UserStore
+    @EnvironmentObject var viewRouter: ViewRouter
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -67,6 +68,7 @@ struct SignUpView: View {
                 .padding(.vertical, 30)
                 
                 Button {
+                    viewRouter.currentPage = "signUpProgress"
                     userStore.createNewAccount()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                         if userStore.signCheck == true {

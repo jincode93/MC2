@@ -67,13 +67,9 @@ struct TitleModifier: ViewModifier {
 }
 
 struct NavItemModifier: ViewModifier {
-    let height: Double
-    
     func body(content: Content) -> some View {
         content
-            .scaledToFit()
-            .frame(height: UIScreen.main.bounds.height * height)
-            .padding(.bottom)
+            .foregroundColor(.stringColor)
     }
 }
 

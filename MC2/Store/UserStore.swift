@@ -34,6 +34,7 @@ class UserStore: ObservableObject {
     @Published var userDanceParts: [UserDancePart] = []
     
     @Published var photoURLs: [String] = []
+    @Published var fetchFinishCheck: Bool = false
     
     let database = Firestore.firestore()
     
@@ -108,6 +109,18 @@ class UserStore: ObservableObject {
             ])
     }
     
+    // MARK: - URL을 UIImage로 변환해주는 메서드
+    func loadImage(from url: URL) async -> UIImage? {
+        do {
+            let data = try await Data(contentsOf: url)
+            let image = UIImage(data: data)
+            return image
+        } catch {
+            print("Failed to load image: \(error)")
+            return nil
+        }
+    }
+    
     // MARK: - UserMusic안에 들어갈 UserDancePart를 database에서 불러오는 메서드
     func userDancePartWillFetchDB(userId: String, musicId: String) async {
         do {
@@ -122,14 +135,26 @@ class UserStore: ObservableObject {
                 
                 let id: String = docData["id"] as? String ?? ""
                 let partIndex: Int = docData["partIndex"] as? Int ?? 0
-                let userDanceImages: [UIImage] = docData["userDanceImages"] as? [UIImage] ?? []
                 let danceDate: Date = docData["danceDate"] as? Date ?? Date.now
+                
+                let userDanceImageUrl: [String] = docData["userDanceImages"] as? [String] ?? []
+                var userDanceImages: [UIImage] = []
+                
+                for imageUrl in userDanceImageUrl {
+                    if let url = URL(string: imageUrl) {
+                        if let image = await self.loadImage(from: url) {
+                            userDanceImages.append(image)
+                            print("@Log image append Count: \(userDanceImages.count)")
+                        }
+                    }
+                }
                 
                 if !userDanceImages.isEmpty {
                     let userDancePart = UserDancePart(id: id, partIndex: partIndex, userDanceImages: userDanceImages, danceDate: danceDate)
                     
                     DispatchQueue.main.async {
                         self.userDanceParts.append(userDancePart)
+                        print("@Log DanceParts append finish")
                     }
                 }
             }
@@ -165,6 +190,11 @@ class UserStore: ObservableObject {
                     }
                 }
             }
+            
+            DispatchQueue.main.async {
+                self.user?.userMusics = self.userMusics
+                self.fetchFinishCheck = true
+            }
         } catch {
             print("userMusicWillFetchDB Function Error: \(error)")
         }
@@ -180,10 +210,8 @@ class UserStore: ObservableObject {
             let nickName: String = docData?["nickName"] as? String ?? ""
             let recentMusic: String = docData?["recentMusic"] as? String ?? ""
             let recentPart: Int = docData?["recentPart"] as? Int ?? 0
-
-            await userMusicWillFetchDB(userId: currentUserUid)
             
-            let user = User(id: id, email: email, nickName: nickName, recentMusic: recentMusic, recentPart: recentPart, userMusics: self.userMusics)
+            let user = User(id: id, email: email, nickName: nickName, recentMusic: recentMusic, recentPart: recentPart, userMusics: [])
             
             DispatchQueue.main.async {
                 self.user = user

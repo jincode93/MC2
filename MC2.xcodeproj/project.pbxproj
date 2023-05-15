@@ -65,14 +65,15 @@
 		3CF7459F2A120DBA0013A5EE /* Lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CF7459E2A120DBA0013A5EE /* Lottie.json */; };
 		3CF745A12A12102A0013A5EE /* SignUpProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF745A02A12102A0013A5EE /* SignUpProgressView.swift */; };
 		3CF745A42A1215860013A5EE /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF745A32A1215860013A5EE /* GalleryView.swift */; };
-		3CF745A62A1222170013A5EE /* CameraGuide.mov in Resources */ = {isa = PBXBuildFile; fileRef = 3CF745A52A1222170013A5EE /* CameraGuide.mov */; };
 		3CF745A82A1223F70013A5EE /* VideoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF745A72A1223F70013A5EE /* VideoStore.swift */; };
 		3CFD272D2A10D9EB003B5C42 /* MusicStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFD272C2A10D9EB003B5C42 /* MusicStore.swift */; };
 		3CFD272F2A10DF70003B5C42 /* OMG.1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CFD272E2A10DF70003B5C42 /* OMG.1.mp3 */; };
 		3CFD27312A10DF77003B5C42 /* OMG.2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CFD27302A10DF77003B5C42 /* OMG.2.mp3 */; };
-		3CFEE08D2A122BB800C40E66 /* OMG.3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CFEE08C2A122BB800C40E66 /* OMG.3.mp3 */; };
-		3CFEE08F2A122BBE00C40E66 /* OMG.4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CFEE08E2A122BBE00C40E66 /* OMG.4.mp3 */; };
-		3CFEE0912A122BC400C40E66 /* OMG.5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CFEE0902A122BC400C40E66 /* OMG.5.mp3 */; };
+		86FB59402A1285BB004FC640 /* CameraGuide.mov in Resources */ = {isa = PBXBuildFile; fileRef = 86FB593C2A1285BB004FC640 /* CameraGuide.mov */; };
+		86FB59412A1285BB004FC640 /* OMG.5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 86FB593D2A1285BB004FC640 /* OMG.5.mp3 */; };
+		86FB59422A1285BB004FC640 /* OMG.4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 86FB593E2A1285BB004FC640 /* OMG.4.mp3 */; };
+		86FB59432A1285BB004FC640 /* OMG.3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 86FB593F2A1285BB004FC640 /* OMG.3.mp3 */; };
+		86FB59452A128714004FC640 /* VideoViewSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FB59442A128714004FC640 /* VideoViewSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -129,14 +130,15 @@
 		3CF7459E2A120DBA0013A5EE /* Lottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Lottie.json; sourceTree = "<group>"; };
 		3CF745A02A12102A0013A5EE /* SignUpProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpProgressView.swift; sourceTree = "<group>"; };
 		3CF745A32A1215860013A5EE /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
-		3CF745A52A1222170013A5EE /* CameraGuide.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = CameraGuide.mov; path = ../../../../../Downloads/CameraGuide.mov; sourceTree = "<group>"; };
 		3CF745A72A1223F70013A5EE /* VideoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoStore.swift; sourceTree = "<group>"; };
 		3CFD272C2A10D9EB003B5C42 /* MusicStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicStore.swift; sourceTree = "<group>"; };
 		3CFD272E2A10DF70003B5C42 /* OMG.1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = OMG.1.mp3; sourceTree = "<group>"; };
 		3CFD27302A10DF77003B5C42 /* OMG.2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = OMG.2.mp3; sourceTree = "<group>"; };
-		3CFEE08C2A122BB800C40E66 /* OMG.3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = OMG.3.mp3; path = "../../../../../Downloads/음원/OMG.3.mp3"; sourceTree = "<group>"; };
-		3CFEE08E2A122BBE00C40E66 /* OMG.4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = OMG.4.mp3; path = "../../../../../Downloads/음원/OMG.4.mp3"; sourceTree = "<group>"; };
-		3CFEE0902A122BC400C40E66 /* OMG.5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = OMG.5.mp3; path = "../../../../../Downloads/음원/OMG.5.mp3"; sourceTree = "<group>"; };
+		86FB593C2A1285BB004FC640 /* CameraGuide.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = CameraGuide.mov; path = ../../../../Downloads/CameraGuide.mov; sourceTree = "<group>"; };
+		86FB593D2A1285BB004FC640 /* OMG.5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = OMG.5.mp3; sourceTree = "<group>"; };
+		86FB593E2A1285BB004FC640 /* OMG.4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = OMG.4.mp3; sourceTree = "<group>"; };
+		86FB593F2A1285BB004FC640 /* OMG.3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = OMG.3.mp3; sourceTree = "<group>"; };
+		86FB59442A128714004FC640 /* VideoViewSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,10 +193,10 @@
 			isa = PBXGroup;
 			children = (
 				3C2150AB2A063909005F02D0 /* Preview Assets.xcassets */,
-				3CFEE0902A122BC400C40E66 /* OMG.5.mp3 */,
-				3CFEE08C2A122BB800C40E66 /* OMG.3.mp3 */,
-				3CFEE08E2A122BBE00C40E66 /* OMG.4.mp3 */,
-				3CF745A52A1222170013A5EE /* CameraGuide.mov */,
+				86FB593F2A1285BB004FC640 /* OMG.3.mp3 */,
+				86FB593E2A1285BB004FC640 /* OMG.4.mp3 */,
+				86FB593C2A1285BB004FC640 /* CameraGuide.mov */,
+				86FB593D2A1285BB004FC640 /* OMG.5.mp3 */,
 				3CF7459E2A120DBA0013A5EE /* Lottie.json */,
 				3CFD27302A10DF77003B5C42 /* OMG.2.mp3 */,
 				3CFD272E2A10DF70003B5C42 /* OMG.1.mp3 */,
@@ -355,6 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				3CF1BF132A0E11BE008C4A1D /* VideoView.swift */,
+				86FB59442A128714004FC640 /* VideoViewSheet.swift */,
 			);
 			path = VideoView;
 			sourceTree = "<group>";
@@ -447,16 +450,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CFEE08F2A122BBE00C40E66 /* OMG.4.mp3 in Resources */,
 				3CA3C87E2A1004AC0096CEC4 /* OMG.2.mov in Resources */,
 				3CFD27312A10DF77003B5C42 /* OMG.2.mp3 in Resources */,
 				3CFD272F2A10DF70003B5C42 /* OMG.1.mp3 in Resources */,
-				3CFEE08D2A122BB800C40E66 /* OMG.3.mp3 in Resources */,
-				3CF745A62A1222170013A5EE /* CameraGuide.mov in Resources */,
+				86FB59422A1285BB004FC640 /* OMG.4.mp3 in Resources */,
+				86FB59402A1285BB004FC640 /* CameraGuide.mov in Resources */,
 				3C2150AC2A063909005F02D0 /* Preview Assets.xcassets in Resources */,
 				3C2150A92A063909005F02D0 /* Assets.xcassets in Resources */,
 				3CF7459F2A120DBA0013A5EE /* Lottie.json in Resources */,
-				3CFEE0912A122BC400C40E66 /* OMG.5.mp3 in Resources */,
+				86FB59432A1285BB004FC640 /* OMG.3.mp3 in Resources */,
+				86FB59412A1285BB004FC640 /* OMG.5.mp3 in Resources */,
 				3C21510B2A093F57005F02D0 /* GoogleService-Info.plist in Resources */,
 				3CA3C87C2A1004A40096CEC4 /* OMG.1.mov in Resources */,
 			);
@@ -482,6 +485,7 @@
 				3C267FDF2A0E1BAE0077C39C /* MotionSplitView.swift in Sources */,
 				3C2151012A081E39005F02D0 /* CameraModel.swift in Sources */,
 				3C2150DD2A07EABA005F02D0 /* User.swift in Sources */,
+				86FB59452A128714004FC640 /* VideoViewSheet.swift in Sources */,
 				3C4A1B022A0CD61D00A218E2 /* MainViewCell.swift in Sources */,
 				3C2150FD2A08168D005F02D0 /* CameraService.swift in Sources */,
 				3C4A1AFB2A0CC55D00A218E2 /* SendToDBProgressView.swift in Sources */,

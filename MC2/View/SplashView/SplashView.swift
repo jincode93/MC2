@@ -12,16 +12,16 @@ struct SplashView: View {
     
     var body: some View {
         ZStack {
-            Color.black.ignoresSafeArea()
+            Color.blackColor.ignoresSafeArea()
             
             Image("DdokDdakLogo")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 190)
-            // LottieView(jsonName: "dino", loopMode: .loop)
+            LottieView(jsonName: "Lottie", loopMode: .playOnce)
         }
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
                 viewRouter.currentPage = "page2"
             }
         }

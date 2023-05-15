@@ -11,4 +11,5 @@ extension Color {
     static let mainColor = Color("MainColor")
     static let pointColor = Color("PointColor")
     static let stringColor = Color("StringColor")
+    static let blackColor = Color("BlackColor")
 }

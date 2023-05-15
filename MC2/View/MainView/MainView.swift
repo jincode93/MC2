@@ -45,10 +45,10 @@ struct MainView: View {
                                 .padding(.horizontal)
                         }
                         
-                        VStack(alignment: .leading) {
+                        VStack(alignment: .leading, spacing: 5) {
                             HStack {
                                 // Text("\(userStore.user!.nickName)님")
-                                Text("제롬님")
+                                Text("뚝딱아")
                                     .font(.title3)
                                     .foregroundColor(.white)
                                     .fontWeight(.bold)

@@ -60,7 +60,19 @@ struct MotionSplitView: View {
                                 Button(action: {
             isSheetUp.toggle()
         }, label: {
-            Image(systemName: "flame.fill")
+            VStack {
+                Image(systemName: "play.circle")
+                    .font(.title3)
+                    .foregroundColor(.pointColor)
+                
+                
+//                Text("영상 보기")
+//                    .font(.caption)
+//                    .foregroundColor(.white)
+//                    .bold()
+            }
+            
+
         })
         )
         .toolbar {

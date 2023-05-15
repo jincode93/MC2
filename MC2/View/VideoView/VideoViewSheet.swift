@@ -32,7 +32,7 @@ struct VideoViewSheet: View {
                     } label: {
                         Image(systemName: "xmark")
                             .font(.headline)
-                            .foregroundColor(.white)
+                            .foregroundColor(.pointColor)
                             .padding(.top)
                             .padding(.trailing)
                             .padding(.trailing)
@@ -44,14 +44,26 @@ struct VideoViewSheet: View {
             
             VStack {
                 Text("영상으로 익히기")
-                    .font(.title2)
+                    .font(.title3)
                     .foregroundColor(.white)
                     .bold()
-                    .padding(.top)
-                    .padding(.top)
+                    .padding(.top, 40)
+//                    .padding(.top)
                 
                 Spacer()
                 
+                VStack {
+                    HStack {
+                        Text("\(danceStore.selectedMusic!.musicTitle)")
+                            .font(.title3)
+                            .foregroundColor(Color.secondary)
+
+                        Text("Part - \(danceStore.tabIndex + 1)")
+                            .font(.headline)
+                            .foregroundColor(Color.secondary)
+                    }
+                    .padding(.top)
+                }
                 if makeVideo {
                     let player = videoStore.player
                     VideoPlayer(player: player)

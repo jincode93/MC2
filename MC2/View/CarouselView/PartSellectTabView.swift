@@ -58,10 +58,12 @@ struct PartSellectTabView: View {
                     }
                     .onAppear {
                         musicStore.playSound(musicTitle: "\(music.musicTitle).1", loop: true)
+                        
                     }
                     .onChange(of: currentTab, perform: { newValue in
                         musicStore.playSound(musicTitle: "\(music.musicTitle).\(newValue + 1)", loop: true)
                         print(currentTab)
+                        danceStore.tabIndex = currentTab
                     })
                     
                     .tabViewStyle(PageTabViewStyle())

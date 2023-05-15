@@ -11,6 +11,8 @@ struct MotionSplitView: View {
     @EnvironmentObject var viewRouter: ViewRouter
     @Environment(\.presentationMode) var presentationMode
     
+    @State private var currentTab: Int = 0
+    
     var body: some View {
         ZStack {
             Color.black
@@ -22,13 +24,12 @@ struct MotionSplitView: View {
                     .foregroundColor(.white)
                     .bold()
                 
-                CenterMotionView()
+                CenterMotionView(currentTab: $currentTab)
                     .frame(height: UIScreen.main.bounds.height * 0.64)
-                //.padding(.horizontal, 20)
                 
                 Spacer()
                 
-                BottomMotionView()
+                BottomMotionView(currentTab: $currentTab)
                     .padding(.horizontal, 20)
                 
                 Spacer()
@@ -65,19 +66,19 @@ struct MotionSplitView: View {
 
 struct CenterMotionView: View {
     @EnvironmentObject var danceStore: DanceStore
+    @Binding var currentTab: Int
     
     var body: some View {
-        TabView {
-            ForEach(0..<danceStore.selectedDancePart!.dancePauseImage.count) { index in
-                Image(uiImage: danceStore.selectedDancePart!.dancePauseImage[index])
-                    .resizable()
-                    .scaledToFit()
-                    .cornerRadius(20.0)
-                    .tag(index)
-                    .onAppear {
-                        danceStore.splitIndex = index
-                        print(danceStore.splitIndex)
-                    }
+        TabView(selection: $currentTab) {
+            
+            if let danceImagesArr = danceStore.selectedDancePart?.dancePauseImage {
+                ForEach(danceImagesArr.indices, id: \.self) { index in
+                    Image(uiImage: danceImagesArr[currentTab])
+                        .resizable()
+                        .scaledToFit()
+                        .cornerRadius(20.0)
+                        .tag(index)
+                }
             }
         }
         .tabViewStyle(PageTabViewStyle())
@@ -88,20 +89,23 @@ struct CenterMotionView: View {
 struct BottomMotionView: View {
     @EnvironmentObject var danceStore: DanceStore
     @State var opacity: Double = 0.0
+    @Binding var currentTab: Int
     
     var body: some View {
         HStack {
-            ForEach(0..<danceStore.selectedDancePart!.dancePauseImage.count) { index in
-                Image(uiImage: danceStore.selectedDancePart!.dancePauseImage[index])
-                    .resizable()
-                    .scaledToFit()
-                    .cornerRadius(5)
-                    .frame(width: UIScreen.main.bounds.width / 11)
-                    .overlay {
-                        Rectangle()
-                            .fill(Color.black)
-                            .opacity(danceStore.splitIndex == index ? 0 : 0.4)
-                    }
+            if let danceImagesArr = danceStore.selectedDancePart?.dancePauseImage {
+                ForEach(danceImagesArr.indices, id: \.self) { index in
+                    Image(uiImage: danceImagesArr[index])
+                        .resizable()
+                        .scaledToFit()
+                        .cornerRadius(5)
+                        .frame(width: UIScreen.main.bounds.width / 11)
+                        .overlay {
+                            Rectangle()
+                                .fill(Color.black)
+                                .opacity(index == currentTab ? 0 : 0.4)
+                        }
+                }
             }
         }
     }

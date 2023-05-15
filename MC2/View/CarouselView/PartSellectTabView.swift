@@ -11,6 +11,9 @@ struct PartSellectTabView: View {
     @EnvironmentObject var danceStore: DanceStore
     @EnvironmentObject var musicStore: MusicStore
     @Environment(\.presentationMode) var presentationMode
+    
+    @State private var currentTab: Int = 0
+    
     var music: Music
     
     var body: some View {
@@ -36,7 +39,7 @@ struct PartSellectTabView: View {
                                     .fill(Color.pointColor)
                                     .frame(width: 8)
                                 
-                                Text("Part \(danceStore.tabIndex + 1)/\(music.dancePartArr.count)")
+                                Text("Part \(currentTab + 1)/\(music.dancePartArr.count)")
                                     .font(.headline)
                                     .foregroundColor(.white)
                             }
@@ -47,15 +50,19 @@ struct PartSellectTabView: View {
                     .padding(.trailing, UIScreen.main.bounds.width / 2)
                     .zIndex(1)
                     
-                    TabView {
-                        ForEach(0..<music.dancePartArr.count, id: \.self) { index in
-                            AnimatedImageDanceFrameView(images: music.dancePartArr[index].dancePauseImage, duration: 3, index: index, count: music.dancePartArr.count)
+                    TabView(selection: $currentTab) {
+                        ForEach(music.dancePartArr.indices, id: \.self) { index in
+                            AnimatedImageDanceFrameView(images: music.dancePartArr[currentTab].dancePauseImage, duration: 3, index: currentTab, count: music.dancePartArr.count)
                                 .tag(index)
-                                .onAppear {
-                                    musicStore.playSound(musicTitle: "\(music.musicTitle).\(index + 1)", loop: true)
-                                }
                         }
                     }
+                    .onAppear {
+                        musicStore.playSound(musicTitle: "\(music.musicTitle).1", loop: true)
+                    }
+                    .onChange(of: currentTab, perform: { newValue in
+                        musicStore.playSound(musicTitle: "\(music.musicTitle).\(newValue + 1)", loop: true)
+                    })
+                    
                     .tabViewStyle(PageTabViewStyle())
                     .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 0.7)
                     .cornerRadius(20)
@@ -73,14 +80,14 @@ struct PartSellectTabView: View {
             }
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading:
-                Button(action: {
-                    presentationMode.wrappedValue.dismiss()
-                }, label: {
-                    Image(systemName: "chevron.left")
-                        .font(.title3)
-                        .foregroundColor(.stringColor)
-                        .bold()
-                })
+                                    Button(action: {
+                presentationMode.wrappedValue.dismiss()
+            }, label: {
+                Image(systemName: "chevron.left")
+                    .font(.title3)
+                    .foregroundColor(.stringColor)
+                    .bold()
+            })
             )
             .toolbar {
                 ToolbarItem(placement: .principal) {

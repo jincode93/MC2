@@ -11,7 +11,10 @@ import AVKit
 struct VideoView: View {
     @EnvironmentObject var danceStore: DanceStore
     @EnvironmentObject var viewRouter: ViewRouter
+    @EnvironmentObject var videoStore: VideoStore
     @Environment(\.presentationMode) var presentationMode
+    
+    @State var currentTab: Int
     
     var body: some View {
         ZStack {
@@ -25,8 +28,8 @@ struct VideoView: View {
                 
                 Spacer()
                 
-                if let url = Bundle.main.url(forResource: "\(danceStore.selectedMusic!.musicTitle).\(danceStore.tabIndex + 1)", withExtension: "mov") {
-                    VideoPlayer(player: AVPlayer(url: url))
+                if let player = videoStore.player {
+                    VideoPlayer(player: player)
                         .frame(maxWidth: UIScreen.main.bounds.width * 0.9)
                         .cornerRadius(20)
                 } else {
@@ -81,12 +84,18 @@ struct VideoView: View {
         }
         .onAppear {
             danceStore.selectedDancePart = danceStore.selectedMusic?.dancePartArr[danceStore.tabIndex]
+            videoStore.videoPlayer(resource: "\(danceStore.selectedMusic!.musicTitle).\(currentTab + 1)", isMuted: false, repeatVideo: true)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                videoStore.play()
+            }
         }
-    }
-}
-
-struct VideoView_Previews: PreviewProvider {
-    static var previews: some View {
-        VideoView()
+        .onDisappear {
+            videoStore.pause()
+        }
+//        .onChange(of: danceStore.tabIndex) { newValue in
+//            videoStore.pause()
+//            videoStore.videoPlayer(resource: "\(danceStore.selectedMusic!.musicTitle).\(danceStore.tabIndex + 1)", isMuted: false, repeatVideo: false)
+//            videoStore.play()
+//        }
     }
 }

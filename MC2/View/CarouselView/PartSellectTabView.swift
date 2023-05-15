@@ -61,6 +61,7 @@ struct PartSellectTabView: View {
                     }
                     .onChange(of: currentTab, perform: { newValue in
                         musicStore.playSound(musicTitle: "\(music.musicTitle).\(newValue + 1)", loop: true)
+                        print(currentTab)
                     })
                     
                     .tabViewStyle(PageTabViewStyle())
@@ -71,7 +72,7 @@ struct PartSellectTabView: View {
                 Spacer()
                 
                 NavigationLink {
-                    VideoView()
+                    VideoView(currentTab: currentTab)
                         .environmentObject(danceStore)
                 } label: {
                     Text("선택")

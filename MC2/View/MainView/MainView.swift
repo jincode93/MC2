@@ -113,16 +113,16 @@ struct MainView: View {
                                 .modifier(NavItemModifier())
                         }
                         
-                        NavigationLink {
-                            if userStore.fetchFinishCheck == false {
-                                // progressView
-                            } else {
-                                GalleryView()
-                            }
-                        } label: {
-                            Image(systemName: "photo.stack.fill")
-                                .modifier(NavItemModifier())
-                        }
+//                        NavigationLink {
+//                            if userStore.fetchFinishCheck == false {
+//                                // progressView
+//                            } else {
+//                                GalleryView()
+//                            }
+//                        } label: {
+//                            Image(systemName: "photo.stack.fill")
+//                                .modifier(NavItemModifier())
+//                        }
                     }
                     .foregroundColor(Color.stringColor)
             )

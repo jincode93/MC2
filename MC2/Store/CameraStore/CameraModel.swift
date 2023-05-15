@@ -62,17 +62,6 @@ final class CameraModel: ObservableObject {
         service.capturePhoto()
     }
     
-    func flipCamera() {
-        service.changeCamera()
-    }
-    
-    func zoom(with factor: CGFloat) {
-        service.set(zoom: factor)
-    }
-    
-    func switchFlash() {
-        service.flashMode = service.flashMode == .on ? .off : .on
-    }
     
     func textChanger() {
         self.counter = "5"
@@ -101,6 +90,7 @@ final class CameraModel: ObservableObject {
         for i in 1...8 {
             DispatchQueue.main.asyncAfter(deadline: .now() + (timer * Double(i))) {
                 self.service.capturePhoto()
+                print("capturePhoto")
                 self.progressCheck += 1
                 if i <= 7 {
                     self.textChanger()

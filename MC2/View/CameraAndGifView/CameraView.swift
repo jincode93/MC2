@@ -81,12 +81,14 @@ struct CameraView: View {
                             for i in 1...7 {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + timer * Double(i)) {
                                     danceFrame = danceStore.selectedDancePart?.danceFrameImage[i] ?? UIImage()
+                                    print("Frame Change")
                                 }
                             }
                             
                             DispatchQueue.main.asyncAfter(deadline: .now() + (timer * 8.0 + 4.3)) {
                                 self.viewRouter.currentPage = "page6"
                                 cameraStore.progressCheck = 0
+                                cameraStore.textOpacity = 0.0
                             }
                         } label: {
                             ZStack {

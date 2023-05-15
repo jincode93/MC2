@@ -11,17 +11,21 @@ import AVKit
 class VideoStore: ObservableObject {
     @Published var player: AVPlayer?
     
-    init() {
-        if let url = Bundle.main.url(forResource: "CameraGuide", withExtension: "mov") {
+    func videoPlayer(resource: String, widthExtension: String = "mov", isMuted: Bool, repeatVideo: Bool) {
+        if let url = Bundle.main.url(forResource: resource, withExtension: widthExtension) {
             player = AVPlayer(url: url)
-            player?.isMuted = true
+            player?.isMuted = isMuted
             
-            let duration = CMTimeGetSeconds(player!.currentItem!.asset.duration)
-            let time = CMTimeMake(value: Int64(duration), timescale: 1)
-            
-            player?.addBoundaryTimeObserver(forTimes: [NSValue(time: time)], queue: .main) { [weak self] in
-                self?.player?.seek(to: .zero)
-                self?.player?.play()
+            if repeatVideo == true {
+                let duration = CMTimeGetSeconds(player!.currentItem!.asset.duration)
+                let time = CMTimeMake(value: Int64(duration), timescale: 1)
+                
+                player?.addBoundaryTimeObserver(forTimes: [NSValue(time: time)], queue: .main) { [weak self] in
+                    self?.player?.seek(to: .zero)
+                    self?.player?.play()
+                }
+            } else {
+                self.player?.play()
             }
         }
     }

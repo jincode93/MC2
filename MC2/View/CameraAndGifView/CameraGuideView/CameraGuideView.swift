@@ -104,6 +104,7 @@ struct CameraGuideView: View {
                         Spacer()
                     }
                     .onAppear {
+                        videoStore.videoPlayer(resource: "CameraGuide", isMuted: true, repeatVideo: true)
                         videoStore.play()
                     }
                     .onDisappear {

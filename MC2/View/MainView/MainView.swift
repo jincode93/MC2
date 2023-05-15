@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
+    @EnvironmentObject var viewRouter: ViewRouter
     @EnvironmentObject var userStore: UserStore
     @EnvironmentObject var danceStore: DanceStore
     @State var isSelected: DanceLevel = .ALL
@@ -101,7 +102,7 @@ struct MainView: View {
                 leading:
                     Image("logo")
                     .resizable()
-                    .modifier(NavItemModifier(height: 0.05)),
+                    .frame(width: 40),
                 
                 trailing:
                     HStack(spacing: 20) {
@@ -109,14 +110,18 @@ struct MainView: View {
                             
                         } label: {
                             Image(systemName: "magnifyingglass")
-                                .modifier(NavItemModifier(height: 0.03))
+                                .modifier(NavItemModifier())
                         }
                         
                         NavigationLink {
-                            // GalleryView()
+                            if userStore.fetchFinishCheck == false {
+                                // progressView
+                            } else {
+                                GalleryView()
+                            }
                         } label: {
                             Image(systemName: "photo.stack.fill")
-                                .modifier(NavItemModifier(height: 0.03))
+                                .modifier(NavItemModifier())
                         }
                     }
                     .foregroundColor(Color.stringColor)

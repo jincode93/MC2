@@ -18,18 +18,6 @@ class DanceStore: ObservableObject {
     @Published var splitIndex: Int = 0
     
     let database = Firestore.firestore()
-    
-    // MARK: - URL을 UIImage로 변환해주는 메서드
-    func loadImage(from url: URL) async -> UIImage? {
-        do {
-            let data = try await Data(contentsOf: url)
-            let image = UIImage(data: data)
-            return image
-        } catch {
-            print("Failed to load image: \(error)")
-            return nil
-        }
-    }
 
     // MARK: - Music 목록 받아오는 메서드
     func musicWillFetchDB() async {

@@ -44,6 +44,7 @@ struct SignInView: View {
                                 await userStore.signInUser()
                                 await userStore.userWillFetchDB()
                                 viewRouter.currentPage = "page4"
+                                await userStore.userMusicWillFetchDB(userId: userStore.currentUserUid)
                             }
                         } label: {
                             Text("로그인")

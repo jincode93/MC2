@@ -26,7 +26,8 @@ struct VideoView: View {
                 Spacer()
                 
                 if let url = Bundle.main.url(forResource: "\(danceStore.selectedMusic!.musicTitle).\(danceStore.tabIndex + 1)", withExtension: "mov") {
-                    VideoPlayer(player: AVPlayer(url: url))
+                    let player = AVPlayer(url: url)
+                    VideoPlayer(player: player)
                         .frame(maxWidth: UIScreen.main.bounds.width * 0.9)
                         .cornerRadius(20)
                 } else {

@@ -112,17 +112,17 @@ struct MainView: View {
                             Image(systemName: "magnifyingglass")
                                 .modifier(NavItemModifier())
                         }
-                        
-                        NavigationLink {
-                            if userStore.fetchFinishCheck == false {
-                                // progressView
-                            } else {
-                                GalleryView()
-                            }
-                        } label: {
-                            Image(systemName: "photo.stack.fill")
-                                .modifier(NavItemModifier())
-                        }
+//                        
+//                        NavigationLink {
+//                            if userStore.fetchFinishCheck == false {
+//                                // progressView
+//                            } else {
+//                                GalleryView()
+//                            }
+//                        } label: {
+//                            Image(systemName: "photo.stack.fill")
+//                                .modifier(NavItemModifier())
+//                        }
                     }
                     .foregroundColor(Color.stringColor)
             )

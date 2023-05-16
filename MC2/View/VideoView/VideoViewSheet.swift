@@ -23,7 +23,6 @@ struct VideoViewSheet: View {
             Color.black.ignoresSafeArea()
                 .zIndex(0)
             
-            
             VStack {
                 HStack {
                     Spacer()
@@ -37,7 +36,6 @@ struct VideoViewSheet: View {
                             .padding(.trailing)
                             .padding(.trailing)
                     }
-
                 }
                 Spacer()
             }
@@ -48,7 +46,6 @@ struct VideoViewSheet: View {
                     .foregroundColor(.white)
                     .bold()
                     .padding(.top, 40)
-//                    .padding(.top)
                 
                 Spacer()
                 
@@ -77,28 +74,7 @@ struct VideoViewSheet: View {
                         .cornerRadius(20)
                 }
                 
-//                if let player = videoStore.player {
-//                    VideoPlayer(player: player)
-//                        .frame(maxWidth: UIScreen.main.bounds.width * 0.9)
-//                        .cornerRadius(20)
-//                        .zIndex(3)
-//                } else {
-//                    Text("비디오 로딩을 실패했습니다.🥲")
-//                        .foregroundColor(.white)
-//                        .frame(maxWidth: UIScreen.main.bounds.width * 0.9)
-//                        .cornerRadius(20)
-//                }
-                
                 Spacer()
-                
-//                Button {
-//                    withAnimation(.easeInOut) {
-//                        presentationMode.wrappedValue.dismiss()
-//                    }
-//                } label: {
-//                    Text("닫기")
-//                        .modifier(LongButtonModifier())
-//                }
             }
             .navigationBarBackButtonHidden(true)
         }
@@ -116,9 +92,3 @@ struct VideoViewSheet: View {
     }
 }
 
-
-//struct VideoViewSheet_Previews: PreviewProvider {
-//    static var previews: some View {
-//        VideoViewSheet()
-//    }
-//}

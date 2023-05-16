@@ -12,6 +12,7 @@ struct GifView: View {
     @EnvironmentObject var danceStore: DanceStore
     @EnvironmentObject var userStore: UserStore
     @EnvironmentObject var viewRouter: ViewRouter
+    @EnvironmentObject var dataManager: DataManager
     @State private var imageArray: [UIImage] = []
     @State private var showingAlert = false
     
@@ -59,7 +60,7 @@ struct GifView: View {
                     Button {
                         Task {
                             viewRouter.currentPage = "page7"
-                            await userStore.userSendToDB(selectedMusic: danceStore.selectedMusic ?? Music(id: "", danceLevel: "", musicTitle: "", singer: "", albumArt: UIImage(), dancePartArr: []), selectedDancePart: danceStore.selectedDancePart ?? DancePart(id: "", partIndex: 0, partMusic: "", dancePauseImage: [UIImage()], danceFrameImage: [UIImage()], danceVideo: ""), userDanceImages: self.imageArray)
+                            dataManager.saveFinalResult(id: UUID().uuidString, musicTitle: danceStore.selectedMusic?.musicTitle ?? "", partIndex: danceStore.selectedDancePart?.partIndex ?? 0, imageArr: imageArray)
                         }
                     } label: {
                         Text("GALLERY")

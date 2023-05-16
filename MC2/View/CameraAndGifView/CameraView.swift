@@ -75,33 +75,42 @@ struct CameraView: View {
                             }
                         }
                         
-                        Button {
-                            model.startPhotoCapture(timer: self.timer)
-                            
-                            for i in 1...7 {
-                                DispatchQueue.main.asyncAfter(deadline: .now() + timer * Double(i)) {
-                                    danceFrame = danceStore.selectedDancePart?.danceFrameImage[i] ?? UIImage()
-                                    print("Frame Change")
+                        VStack {
+                            Spacer()
+                            Image("autoButton")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height: 60)
+                                
+                            Button {
+                                model.startPhotoCapture(timer: self.timer)
+                                
+                                for i in 1...7 {
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + timer * Double(i)) {
+                                        danceFrame = danceStore.selectedDancePart?.danceFrameImage[i] ?? UIImage()
+                                        print("Frame Change")
+                                    }
+                                }
+                                
+                                DispatchQueue.main.asyncAfter(deadline: .now() + (timer * 8.0 + 4.3)) {
+                                    self.viewRouter.currentPage = "page6"
+                                    cameraStore.progressCheck = 0
+                                    cameraStore.textOpacity = 0.0
+                                }
+                            } label: {
+                                ZStack {
+                                    Circle()
+                                        .frame(width: 60)
+                                        .foregroundColor(.white)
+                                    
+                                    Circle()
+                                        .strokeBorder(.white, lineWidth: 3)
+                                        .frame(width: 70)
                                 }
                             }
-                            
-                            DispatchQueue.main.asyncAfter(deadline: .now() + (timer * 8.0 + 4.3)) {
-                                self.viewRouter.currentPage = "page6"
-                                cameraStore.progressCheck = 0
-                                cameraStore.textOpacity = 0.0
-                            }
-                        } label: {
-                            ZStack {
-                                Circle()
-                                    .frame(width: 60)
-                                    .foregroundColor(.white)
-                                
-                                Circle()
-                                    .strokeBorder(.white, lineWidth: 3)
-                                    .frame(width: 70)
-                            }
                         }
-                        .offset(y: UIScreen.main.bounds.height * 19 / 60)
+                        .frame(height: 150)
+                        .offset(y: UIScreen.main.bounds.height * 17 / 60)
                         .opacity(cameraStore.guideViewToggle ? 0 : 1)
                     }
                 }

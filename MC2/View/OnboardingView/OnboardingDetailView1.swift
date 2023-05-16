@@ -10,27 +10,14 @@ import SwiftUI
 struct OnboardingDetailView1: View {
     var body: some View {
         VStack {
-            Text("어려운 춤, 쉽고 재미있게")
-                .modifier(ScriptModifier())
-                
-            HStack {
-                Text("DDOK DDAK")
-                    .modifier(PointScriptModifier())
-                
-                Text("하세요!")
-                    .modifier(ScriptModifier())
-            }
-            
-            Spacer()
-            
-            Image("OnboardingImage1")
+            Image("OnboardingGif5")
                 .resizable()
                 .scaledToFit()
-                .frame(width: UIScreen.main.bounds.width * 5 / 8)
             
-            Spacer()
+            Rectangle()
+                .fill(Color.black)
+                .frame(height: 40)
         }
-        .padding(.top, 20)
     }
 }
 

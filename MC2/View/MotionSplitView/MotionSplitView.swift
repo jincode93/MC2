@@ -9,9 +9,10 @@ import SwiftUI
 
 struct MotionSplitView: View {
     @EnvironmentObject var viewRouter: ViewRouter
+    @EnvironmentObject var danceStore: DanceStore
     @Environment(\.presentationMode) var presentationMode
     
-    @State private var currentTab: Int = 0
+    @State var currentTab: Int
     @State private var isSheetUp: Bool = false
     
     var body: some View {
@@ -20,10 +21,8 @@ struct MotionSplitView: View {
                 .ignoresSafeArea()
             
             VStack {
-                Text("한 동작씩 쪼개보기")
-                    .font(.title3)
-                    .foregroundColor(.white)
-                    .bold()
+                Text("\(danceStore.selectedMusic!.musicTitle)-Part\(currentTab + 1)")
+                    .foregroundColor(.stringColor)
                 
                 CenterMotionView(currentTab: $currentTab)
                     .frame(height: UIScreen.main.bounds.height * 0.64)
@@ -41,13 +40,11 @@ struct MotionSplitView: View {
                     Text("촬영하기")
                         .modifier(LongButtonModifier())
                 }
-                
-                .sheet(isPresented: $isSheetUp) {
-                    VideoViewSheet(currentTab: $currentTab)
-                }
             }
         }
-        
+        .sheet(isPresented: $isSheetUp) {
+            VideoViewSheet(currentTab: $currentTab)
+        }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading:
                                 Button(action: {
@@ -64,26 +61,19 @@ struct MotionSplitView: View {
                 Image(systemName: "play.circle")
                     .font(.title3)
                     .foregroundColor(.pointColor)
-                
-                
-//                Text("영상 보기")
-//                    .font(.caption)
-//                    .foregroundColor(.white)
-//                    .bold()
             }
-            
-
         })
         )
         .toolbar {
             ToolbarItem(placement: .principal) {
                 VStack {
-                    Text("Step 2")
-                        .foregroundColor(.pointColor)
+                    Text("한 동작씩 쪼개보기")
+                        .font(.title3)
+                        .foregroundColor(.white)
+                        .bold()
                 }
             }
         }
-        .frame(maxHeight: .infinity, alignment: .top)
         .frame(maxHeight: .infinity, alignment: .top)
     }
 }
@@ -94,7 +84,6 @@ struct CenterMotionView: View {
     
     var body: some View {
         TabView(selection: $currentTab) {
-            
             if let danceImagesArr = danceStore.selectedDancePart?.dancePauseImage {
                 ForEach(danceImagesArr.indices, id: \.self) { index in
                     Image(uiImage: danceImagesArr[currentTab])
@@ -112,14 +101,13 @@ struct CenterMotionView: View {
 
 struct BottomMotionView: View {
     @EnvironmentObject var danceStore: DanceStore
+    @State var opacity: Double = 0.0
     @Binding var currentTab: Int
     
     var body: some View {
         HStack {
             if let danceImagesArr = danceStore.selectedDancePart?.dancePauseImage {
                 ForEach(danceImagesArr.indices, id: \.self) { index in
-                    let opacity = index <= currentTab ? 0.4 : 0
-                    
                     Image(uiImage: danceImagesArr[index])
                         .resizable()
                         .scaledToFit()
@@ -128,40 +116,10 @@ struct BottomMotionView: View {
                         .overlay {
                             Rectangle()
                                 .fill(Color.black)
-                                .opacity(opacity)
+                                .opacity(index == currentTab ? 0 : 0.4)
                         }
-
                 }
             }
         }
     }
 }
-
-
-
-//struct BottomMotionView: View {
-//    @EnvironmentObject var danceStore: DanceStore
-//    @Binding var currentTab: Int
-//
-//    var body: some View {
-//        HStack {
-//            if let danceImagesArr = danceStore.selectedDancePart?.dancePauseImage {
-//                ForEach(danceImagesArr.indices, id: \.self) { index in
-//                    let opacity = index <= currentTab ? 0.4 : 0
-//
-//                    Image(uiImage: danceImagesArr[index])
-//                        .resizable()
-//                        .scaledToFit()
-//                        .cornerRadius(5)
-//                        .frame(width: UIScreen.main.bounds.width / 11)
-//                        .overlay {
-//                            Rectangle()
-//                                .fill(Color.black)
-//                                .opacity(opacity)
-//                        }
-//
-//                }
-//            }
-//        }
-//    }
-//}

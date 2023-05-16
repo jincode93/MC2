@@ -8,29 +8,19 @@
 import SwiftUI
 
 struct OnboardingDetailView2: View {
+    @State private var images: [UIImage] = [UIImage(named: "OnboardingGif1")!,
+                                            UIImage(named: "OnboardingGif2")!,
+                                            UIImage(named: "OnboardingGif3")!,
+                                            UIImage(named: "OnboardingGif4")!]
     var body: some View {
         VStack {
-            Text("사진을 찍기만 해도")
-                .modifier(ScriptModifier())
+            OnboardingFrameView(images: images, duration: 2.0)
+                .scaledToFill()
             
-            HStack {
-                Text("하이라이트")
-                    .modifier(PointScriptModifier())
-                
-                Text("댄스를 똑딱")
-                    .modifier(ScriptModifier())
-            }
-            
-            Spacer()
-            
-            Image("OnboardingImage2")
-                .resizable()
-                .scaledToFit()
-                .frame(width: UIScreen.main.bounds.width * 5 / 8)
-            
-            Spacer()
+            Rectangle()
+                .fill(Color.black)
+                .frame(height: 40)
         }
-        .padding(.top, 20)
     }
 }
 

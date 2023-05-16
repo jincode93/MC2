@@ -47,7 +47,7 @@ class DanceStore: ObservableObject {
                     
                     var danceFrameImage: [UIImage] = []
                     for i in 1...8 {
-                        if let image = UIImage(named: "part\(partIndex).\(i)") {
+                        if let image = UIImage(named: "\(musicTitle).part\(partIndex).\(i)") {
                             danceFrameImage.append(image)
                         } else {
                             print("danceFrameImage append fail")
@@ -56,7 +56,7 @@ class DanceStore: ObservableObject {
                     
                     var dancePauseImage: [UIImage] = []
                     for i in 1...8 {
-                        if let image = UIImage(named: "omgPart\(partIndex).\(i)") {
+                        if let image = UIImage(named: "\(musicTitle)Part\(partIndex).\(i)") {
                             dancePauseImage.append(image)
                         } else {
                             print("dancePauseImage append fail")

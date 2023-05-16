@@ -42,7 +42,7 @@ struct VideoView: View {
                 Spacer()
                 
                 NavigationLink {
-                    MotionSplitView()
+                    //MotionSplitView()
                 } label: {
                     Text("선택")
                         .modifier(LongButtonModifier())
@@ -92,5 +92,10 @@ struct VideoView: View {
         .onDisappear {
             videoStore.pause()
         }
+//        .onChange(of: danceStore.tabIndex) { newValue in
+//            videoStore.pause()
+//            videoStore.videoPlayer(resource: "\(danceStore.selectedMusic!.musicTitle).\(danceStore.tabIndex + 1)", isMuted: false, repeatVideo: false)
+//            videoStore.play()
+//        }
     }
 }

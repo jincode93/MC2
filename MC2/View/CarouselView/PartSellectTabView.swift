@@ -58,12 +58,10 @@ struct PartSellectTabView: View {
                     }
                     .onAppear {
                         musicStore.playSound(musicTitle: "\(music.musicTitle).1", loop: true)
-                        
                     }
                     .onChange(of: currentTab, perform: { newValue in
                         musicStore.playSound(musicTitle: "\(music.musicTitle).\(newValue + 1)", loop: true)
                         print(currentTab)
-                        danceStore.tabIndex = currentTab
                     })
                     
                     .tabViewStyle(PageTabViewStyle())
@@ -74,8 +72,9 @@ struct PartSellectTabView: View {
                 Spacer()
                 
                 NavigationLink {
-                    VideoView(currentTab: currentTab)
-                        .environmentObject(danceStore)
+                    MotionSplitView(currentTab: currentTab)
+//                    VideoView(currentTab: currentTab)
+//                        .environmentObject(danceStore)
                 } label: {
                     Text("선택")
                         .modifier(LongButtonModifier())

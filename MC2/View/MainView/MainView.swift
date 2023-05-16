@@ -45,10 +45,10 @@ struct MainView: View {
                                 .padding(.horizontal)
                         }
                         
-                        VStack(alignment: .leading, spacing: 5) {
+                        VStack(alignment: .leading) {
                             HStack {
                                 // Text("\(userStore.user!.nickName)님")
-                                Text("뚝딱아")
+                                Text("제롬님")
                                     .font(.title3)
                                     .foregroundColor(.white)
                                     .fontWeight(.bold)
@@ -86,7 +86,8 @@ struct MainView: View {
                         ForEach(filteredMusic) { music in
                             NavigationLink {
                                 // PartSellectCarouselView(selectedMusic: music)
-                                PartSellectTabView(music: music)
+                                // PartSellectTabView(music: music)
+                                PartSellectVideoTabView(music: music)
                                     .environmentObject(danceStore)
                             } label: {
                                 MainViewCell(music: music)
@@ -113,16 +114,12 @@ struct MainView: View {
                                 .modifier(NavItemModifier())
                         }
                         
-//                        NavigationLink {
-//                            if userStore.fetchFinishCheck == false {
-//                                // progressView
-//                            } else {
-//                                GalleryView()
-//                            }
-//                        } label: {
-//                            Image(systemName: "photo.stack.fill")
-//                                .modifier(NavItemModifier())
-//                        }
+                        NavigationLink {
+                            GalleryView()
+                        } label: {
+                            Image(systemName: "photo.stack.fill")
+                                .modifier(NavItemModifier())
+                        }
                     }
                     .foregroundColor(Color.stringColor)
             )

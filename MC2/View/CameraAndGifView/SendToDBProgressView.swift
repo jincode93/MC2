@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SendToDBProgressView: View {
+    @EnvironmentObject var viewRouter: ViewRouter
+    
     var body: some View {
         VStack {
             ProgressView()
@@ -15,6 +17,11 @@ struct SendToDBProgressView: View {
             Text("이미지 저장 중")
                 .font(.title2)
                 .foregroundColor(.white)
+        }
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                viewRouter.currentPage = "page8"
+            }
         }
     }
 }

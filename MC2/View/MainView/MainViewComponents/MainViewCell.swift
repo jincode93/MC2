@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct MainViewCell: View {
-    
-    let cellColor = #colorLiteral(red: 0.1098039216, green: 0.1098039216, blue: 0.1176470588, alpha: 1)
     var music: Music
     
     var body: some View {
@@ -20,10 +18,10 @@ struct MainViewCell: View {
                 .scaledToFit()
                 .padding(.trailing, 10)
             
-            VStack(alignment: .leading, spacing: 4) {
+            VStack(alignment: .leading) {
                 Text(music.musicTitle)
-                    .font(.headline)
-                    .fontWeight(.semibold)
+                    .font(.title3)
+                    .bold()
                     .foregroundColor(.white)
                 
                 Text(music.singer)
@@ -35,7 +33,7 @@ struct MainViewCell: View {
                 .foregroundColor(.stringColor)
                 .padding(.trailing, 20)
         }
-        .background(Color(cellColor))
+        .background(Color.mainColor)
         .cornerRadius(5)
     }
 }

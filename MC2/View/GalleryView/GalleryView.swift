@@ -10,6 +10,7 @@ import SwiftUI
 struct GalleryView: View {
     @EnvironmentObject var userStore: UserStore
     @EnvironmentObject var viewRouter: ViewRouter
+    @EnvironmentObject var dataManager: DataManager
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -18,12 +19,9 @@ struct GalleryView: View {
             
             ScrollView {
                 VStack {
-                    ForEach(userStore.user!.userMusics) { music in
-                        ForEach(music.userDanceParts) { part in
-                            AnimatedImageFrameView(images: part.userDanceImages, duration: 2.5)
-                                .frame(width: UIScreen.main.bounds.width * 0.9)
-                        }
-                        
+                    ForEach(dataManager.resultArr) { result in
+                        AnimatedImageFrameView(images: result.imageArr, duration: 2.5)
+                            .frame(width: UIScreen.main.bounds.width * 0.9)
                     }
                 }
             }
@@ -42,6 +40,9 @@ struct GalleryView: View {
                             .modifier(TitleModifier())
                     }
                 }
+            }
+            .onAppear {
+                dataManager.fetchFinalResults()
             }
         }
     }

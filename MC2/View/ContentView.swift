@@ -16,10 +16,10 @@ struct ContentView: View {
     @EnvironmentObject var cameraStore: CameraModel
     @EnvironmentObject var musicStore: MusicStore
     @EnvironmentObject var videoStore: VideoStore
+    @EnvironmentObject var dataManager: DataManager
     
     var body: some View {
         ZStack {
-            
             Color.black.ignoresSafeArea()
             
             switch viewRouter.currentPage {
@@ -51,6 +51,7 @@ struct ContentView: View {
         .environmentObject(musicStore)
         .environmentObject(cameraStore)
         .environmentObject(videoStore)
+        .environmentObject(dataManager)
         .onAppear {
             Task {
                 await danceStore.musicWillFetchDB()

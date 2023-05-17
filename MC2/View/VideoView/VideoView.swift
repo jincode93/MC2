@@ -48,6 +48,7 @@ struct VideoView: View {
                         .modifier(LongButtonModifier())
                 }
             }
+            .background(Color.black)
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(
                 leading:
@@ -80,18 +81,18 @@ struct VideoView: View {
                     }
                 }
             }
-            .frame(maxHeight: .infinity, alignment: .top)
-        }
-        .onAppear {
-            danceStore.selectedDancePart = danceStore.selectedMusic?.dancePartArr[danceStore.tabIndex]
-            videoStore.videoPlayer(resource: "\(danceStore.selectedMusic!.musicTitle).\(currentTab + 1)", isMuted: false, repeatVideo: true)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                videoStore.play()
+            .onAppear {
+                danceStore.selectedDancePart = danceStore.selectedMusic?.dancePartArr[danceStore.tabIndex]
+                videoStore.videoPlayer(resource: "\(danceStore.selectedMusic!.musicTitle).\(currentTab + 1)", isMuted: false, repeatVideo: true)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    videoStore.play()
+                }
+            }
+            .onDisappear {
+                videoStore.pause()
             }
         }
-        .onDisappear {
-            videoStore.pause()
-        }
+        
 //        .onChange(of: danceStore.tabIndex) { newValue in
 //            videoStore.pause()
 //            videoStore.videoPlayer(resource: "\(danceStore.selectedMusic!.musicTitle).\(danceStore.tabIndex + 1)", isMuted: false, repeatVideo: false)

@@ -27,75 +27,77 @@ struct MainView: View {
     
     var body: some View {
         NavigationView {
-            ScrollView {
-                VStack(spacing: 0) {
-                    ZStack(alignment: .bottomLeading) {
-                        if userStore.user?.recentMusic == nil {
-                            Rectangle()
-                                .fill(Color.black.opacity(0.6))
-                                .frame(height: UIScreen.main.bounds.height * 0.25)
-                                .padding(.horizontal)
-                        } else {
-                            Image(userStore.user?.recentMusic ?? "")
-                                .resizable()
-                                .scaledToFill()
-                                .opacity(0.2)
-                                .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 0.25)
-                                .cornerRadius(15)
-                                .padding(.horizontal)
-                        }
-                        
-                        VStack(alignment: .leading) {
-                            HStack {
-                                Text("뚝딱님")
-                                    .font(.title3)
-                                    .foregroundColor(.white)
-                                    .fontWeight(.bold)
-                                
-                                Text("DDOK-DDAK")
-                                    .font(.title3)
-                                    .foregroundColor(.pointColor)
-                                    .fontWeight(.bold)
-                                
-                                Text("할")
-                                    .font(.title3)
-                                    .foregroundColor(.white)
-                                    .fontWeight(.bold)
+            ZStack {
+                Color.black.ignoresSafeArea()
+                
+                ScrollView {
+                    VStack(spacing: 0) {
+                        ZStack(alignment: .bottomLeading) {
+                            if userStore.user?.recentMusic == nil {
+                                Rectangle()
+                                    .fill(Color.black.opacity(0.6))
+                                    .frame(height: UIScreen.main.bounds.height * 0.25)
+                                    .padding(.horizontal)
+                            } else {
+                                Image(userStore.user?.recentMusic ?? "")
+                                    .resizable()
+                                    .scaledToFill()
+                                    .opacity(0.2)
+                                    .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 0.25)
+                                    .cornerRadius(15)
+                                    .padding(.horizontal)
                             }
-                            .padding(.bottom, 3)
                             
-                            Text("노래를 선택하세요")
-                                .font(.title3)
-                                .foregroundColor(.white)
-                                .fontWeight(.bold)
+                            VStack(alignment: .leading) {
+                                HStack {
+                                    Text("뚝딱님")
+                                        .font(.title3)
+                                        .foregroundColor(.white)
+                                        .fontWeight(.bold)
+                                    
+                                    Text("DDOK-DDAK")
+                                        .font(.title3)
+                                        .foregroundColor(.pointColor)
+                                        .fontWeight(.bold)
+                                    
+                                    Text("할")
+                                        .font(.title3)
+                                        .foregroundColor(.white)
+                                        .fontWeight(.bold)
+                                }
+                                .padding(.bottom, 3)
+                                
+                                Text("노래를 선택하세요")
+                                    .font(.title3)
+                                    .foregroundColor(.white)
+                                    .fontWeight(.bold)
+                            }
+                            .padding(20)
                         }
-                        .padding(20)
-                    }
-                    
-                    VStack {
-                        GeometryReader { proxy in
-                            segmentControl(isSelected: $isSelected)
-                                .frame(width: proxy.size.width, height: 100)
-                                .offset(y: max(-(proxy.frame(in: .global).minY - 90), 0))
-
-                        }
-                        .padding(.bottom,50)
-                        .zIndex(3)
                         
-                        ForEach(filteredMusic) { music in
-                            NavigationLink {
-                                PartSellectVideoTabView(music: music)
-                                    .environmentObject(danceStore)
-                            } label: {
-                                MainViewCell(music: music)
+                        VStack {
+                            GeometryReader { proxy in
+                                segmentControl(isSelected: $isSelected)
+                                    .frame(width: proxy.size.width, height: 100)
+                                    .offset(y: max(-(proxy.frame(in: .global).minY - 90), 0))
+                                
+                            }
+                            .padding(.bottom,50)
+                            .zIndex(3)
+                            
+                            ForEach(filteredMusic) { music in
+                                NavigationLink {
+                                    PartSellectVideoTabView(music: music)
+                                        .environmentObject(danceStore)
+                                } label: {
+                                    MainViewCell(music: music)
+                                }
                             }
                         }
                     }
-                }
-                .padding(.horizontal, 5)
-            } // ScrollView
-            .background(Color.black)
-            // .ignoresSafeArea(edges: .bottom)
+                    .padding(.horizontal, 5)
+                } // ScrollView
+            }
             // .navigationBarHidden(true)
             .navigationBarItems(
                 leading:

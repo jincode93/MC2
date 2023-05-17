@@ -19,7 +19,8 @@ struct PartSellectVideoTabView: View {
     var music: Music
     
     var body: some View {
-        NavigationView {
+        ZStack {
+            Color.black.ignoresSafeArea()
             
             VStack {
                 Text("\(music.musicTitle) - \(music.singer)")
@@ -98,41 +99,41 @@ struct PartSellectVideoTabView: View {
                             .modifier(LongButtonModifier())
                     }
                 }
-            }
-            .onAppear {
-                videoStore.videoPlayer(resource: "\(music.musicTitle).\(currentTab + 1)", isMuted: false, repeatVideo: true)
-                videoStore.play()
-            }
-            .onChange(of: currentTab, perform: { newValue in
-                videoStore.pause()
-                videoStore.videoPlayer(resource: "\(music.musicTitle).\(currentTab + 1)", isMuted: false, repeatVideo: true)
-                videoStore.play()
-            })
-            .onDisappear {
-                videoStore.pause()
-            }
-            .navigationBarBackButtonHidden(true)
-            .navigationBarItems(leading:
-                                    Button(action: {
-                presentationMode.wrappedValue.dismiss()
-            }, label: {
-                Image(systemName: "chevron.left")
-                    .font(.title3)
-                    .foregroundColor(.stringColor)
-                    .bold()
-            })
-            )
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    VStack {
-                        Text("안무 구간 선택")
-                            .font(.title3)
-                            .foregroundColor(.white)
-                            .bold()
-                    }
+            } // VStack
+        }
+        .onAppear {
+            videoStore.videoPlayer(resource: "\(music.musicTitle).\(currentTab + 1)", isMuted: false, repeatVideo: true)
+            videoStore.play()
+        }
+        .onChange(of: currentTab, perform: { newValue in
+            videoStore.pause()
+            videoStore.videoPlayer(resource: "\(music.musicTitle).\(currentTab + 1)", isMuted: false, repeatVideo: true)
+            videoStore.play()
+        })
+        .onDisappear {
+            videoStore.pause()
+        }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading:
+                                Button(action: {
+            presentationMode.wrappedValue.dismiss()
+        }, label: {
+            Image(systemName: "chevron.left")
+                .font(.title3)
+                .foregroundColor(.stringColor)
+                .bold()
+        })
+        )
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                VStack {
+                    Text("안무 구간 선택")
+                        .font(.title3)
+                        .foregroundColor(.white)
+                        .bold()
                 }
             }
-        } // NavigationView
+        }
         .onAppear {
             danceStore.selectedMusic = self.music
         }

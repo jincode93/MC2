@@ -88,11 +88,16 @@ struct PartSellectVideoTabView: View {
                 
                 Spacer()
                 
-                NavigationLink {
-                    MotionSplitView(currentTab: currentTab)
+                Button {
+                    danceStore.selectedDancePart = danceStore.selectedMusic?.dancePartArr[currentTab]
+                    print(danceStore.selectedDancePart?.partIndex)
                 } label: {
-                    Text("선택")
-                        .modifier(LongButtonModifier())
+                    NavigationLink {
+                        MotionSplitView(currentTab: currentTab)
+                    } label: {
+                        Text("선택")
+                            .modifier(LongButtonModifier())
+                    }
                 }
             }
             .onAppear {

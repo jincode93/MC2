@@ -56,7 +56,7 @@ struct OnboardingView: View {
                         viewRouter.currentPage = "page4"
                     } label: {
                         Text("시작하기")
-                            .modifier(LongButtonModifier(backgroundColor: .pointColor, foregroundColor: .black))
+                            .modifier(LongButtonModifier(backgroundColor: .pointColor, foregroundColor2: .black))
                     }
                     .padding(.bottom, 10)
                 }

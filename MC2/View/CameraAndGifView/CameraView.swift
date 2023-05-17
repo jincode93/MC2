@@ -18,6 +18,8 @@ struct CameraView: View {
     @State var selectedPart: DancePart?
     @State var danceFrame: UIImage = UIImage()
     @State var timer: Double = 5.0
+    @State var tabSelect: Int = 1
+    @State var isbuttonOpacity: Bool = false
     
     var body: some View {
         GeometryReader { reader in
@@ -26,10 +28,11 @@ struct CameraView: View {
                 
                 VStack {
                     ZStack {
-                        CameraGuideView()
+                        CameraGuideView(tabSelect: tabSelect)
                             .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 0.76)
                             .zIndex(2)
                             .opacity(cameraStore.guideViewToggle ? 1 : 0)
+                            .cornerRadius(20)
                         
                         VStack {
                             CameraProgressBar()
@@ -60,6 +63,7 @@ struct CameraView: View {
                             .scaledToFit()
                             .frame(width: UIScreen.main.bounds.width)
                             .opacity(cameraStore.guideViewToggle ? 0 : 1)
+                            .zIndex(2)
                         
                         VStack {
                             Spacer()
@@ -83,6 +87,7 @@ struct CameraView: View {
                                 .frame(height: 60)
                                 
                             Button {
+                                isbuttonOpacity = true
                                 model.startPhotoCapture(timer: self.timer)
                                 
                                 for i in 1...7 {
@@ -112,6 +117,7 @@ struct CameraView: View {
                         .frame(height: 150)
                         .offset(y: UIScreen.main.bounds.height * 17 / 60)
                         .opacity(cameraStore.guideViewToggle ? 0 : 1)
+                        .opacity(isbuttonOpacity ? 0 : 1)
                     }
                 }
             }
@@ -129,12 +135,12 @@ struct CameraView: View {
                                     HStack(spacing: 20) {
                 Button {
                     cameraStore.guideViewToggle.toggle()
-                    cameraStore.pageControl = true
                 } label: {
                     Image(systemName: "questionmark.circle")
                         .font(.title3)
                         .foregroundColor(.stringColor)
                         .bold()
+                        .opacity(isbuttonOpacity ? 0 : 1)
                 }
             }
                 .foregroundColor(Color.stringColor)

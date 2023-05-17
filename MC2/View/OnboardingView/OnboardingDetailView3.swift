@@ -10,7 +10,7 @@ import SwiftUI
 struct OnboardingDetailView3: View {
     var body: some View {
         VStack {
-            Image("OnboardingGif6")
+            Image("OnboardingImage5")
                 .resizable()
                 .scaledToFit()
             

@@ -9,13 +9,14 @@ import SwiftUI
 
 struct LongButtonModifier: ViewModifier {
     var backgroundColor: Color = .mainColor
+    var foregroundColor2: Color = .foregroundColor
     var foregroundColor: Color = .white
     
     func body(content: Content) -> some View {
         content
-            .font(.title3)
-            .foregroundColor(foregroundColor)
-            .bold()
+            .font(.headline)
+            .foregroundColor(foregroundColor2)
+            .fontWeight(.semibold)
             .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 0.06)
             .background(backgroundColor)
             .cornerRadius(10)

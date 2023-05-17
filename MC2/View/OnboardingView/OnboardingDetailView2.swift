@@ -12,6 +12,7 @@ struct OnboardingDetailView2: View {
                                             UIImage(named: "OnboardingGif2")!,
                                             UIImage(named: "OnboardingGif3")!,
                                             UIImage(named: "OnboardingGif4")!]
+    
     var body: some View {
         VStack {
             OnboardingFrameView(images: images, duration: 2.0)

@@ -11,7 +11,7 @@ struct MainView: View {
     @EnvironmentObject var viewRouter: ViewRouter
     @EnvironmentObject var userStore: UserStore
     @EnvironmentObject var danceStore: DanceStore
-    @State var isSelected: DanceLevel = .ALL
+    @State var isSelected: DanceLevel = .EASY
     private var filteredMusic: [Music] {
         switch isSelected {
         case .ALL:
@@ -47,8 +47,7 @@ struct MainView: View {
                         
                         VStack(alignment: .leading) {
                             HStack {
-                                // Text("\(userStore.user!.nickName)님")
-                                Text("제롬님")
+                                Text("뚝딱님")
                                     .font(.title3)
                                     .foregroundColor(.white)
                                     .fontWeight(.bold)
@@ -85,8 +84,6 @@ struct MainView: View {
                         
                         ForEach(filteredMusic) { music in
                             NavigationLink {
-                                // PartSellectCarouselView(selectedMusic: music)
-                                // PartSellectTabView(music: music)
                                 PartSellectVideoTabView(music: music)
                                     .environmentObject(danceStore)
                             } label: {

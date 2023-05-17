@@ -61,6 +61,16 @@
 		3CC993012A135D9800A81B1D /* VideoViewSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC993002A135D9800A81B1D /* VideoViewSheet.swift */; };
 		3CC993032A136B6200A81B1D /* PartSellectVideoTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC993022A136B6200A81B1D /* PartSellectVideoTabView.swift */; };
 		3CC993052A13AD7A00A81B1D /* OnboardingFrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC993042A13AD7A00A81B1D /* OnboardingFrameView.swift */; };
+		3CD63E792A13EA1A00F7EE58 /* 화이팅해야지.1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CD63E712A13EA1A00F7EE58 /* 화이팅해야지.1.mp3 */; };
+		3CD63E7A2A13EA1A00F7EE58 /* 화이팅해야지.4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CD63E722A13EA1A00F7EE58 /* 화이팅해야지.4.mp3 */; };
+		3CD63E7B2A13EA1A00F7EE58 /* 화이팅해야지.2.mov in Resources */ = {isa = PBXBuildFile; fileRef = 3CD63E732A13EA1A00F7EE58 /* 화이팅해야지.2.mov */; };
+		3CD63E7C2A13EA1A00F7EE58 /* 화이팅해야지.3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CD63E742A13EA1A00F7EE58 /* 화이팅해야지.3.mp3 */; };
+		3CD63E7D2A13EA1A00F7EE58 /* 화이팅해야지.2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CD63E752A13EA1A00F7EE58 /* 화이팅해야지.2.mp3 */; };
+		3CD63E7E2A13EA1A00F7EE58 /* 화이팅해야지.4.mov in Resources */ = {isa = PBXBuildFile; fileRef = 3CD63E762A13EA1A00F7EE58 /* 화이팅해야지.4.mov */; };
+		3CD63E7F2A13EA1A00F7EE58 /* 화이팅해야지.3.mov in Resources */ = {isa = PBXBuildFile; fileRef = 3CD63E772A13EA1A00F7EE58 /* 화이팅해야지.3.mov */; };
+		3CD63E802A13EA1A00F7EE58 /* 화이팅해야지.1.mov in Resources */ = {isa = PBXBuildFile; fileRef = 3CD63E782A13EA1A00F7EE58 /* 화이팅해야지.1.mov */; };
+		3CD63E822A14056800F7EE58 /* CameraGuideViewDetail1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD63E812A14056800F7EE58 /* CameraGuideViewDetail1.swift */; };
+		3CD63E842A14057500F7EE58 /* CameraGuideViewDetail2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD63E832A14057500F7EE58 /* CameraGuideViewDetail2.swift */; };
 		3CF1BF122A0E1145008C4A1D /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1BF112A0E1145008C4A1D /* LottieView.swift */; };
 		3CF1BF142A0E11BE008C4A1D /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1BF132A0E11BE008C4A1D /* VideoView.swift */; };
 		3CF1BF182A0E12A3008C4A1D /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 3CF1BF172A0E12A3008C4A1D /* Lottie */; };
@@ -79,15 +89,7 @@
 		3CFEE0D12A12C35900C40E66 /* CameraGuide.mov in Resources */ = {isa = PBXBuildFile; fileRef = 3CFEE0CD2A12C35900C40E66 /* CameraGuide.mov */; };
 		3CFEE0D22A12C35900C40E66 /* OMG.3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CFEE0CE2A12C35900C40E66 /* OMG.3.mp3 */; };
 		3CFEE0D32A12C35900C40E66 /* OMG.4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CFEE0CF2A12C35900C40E66 /* OMG.4.mp3 */; };
-		3CFEE0D82A13396F00C40E66 /* 화이팅해야지.2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CFEE0D42A13396F00C40E66 /* 화이팅해야지.2.mp3 */; };
-		3CFEE0D92A13396F00C40E66 /* 화이팅해야지.3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CFEE0D52A13396F00C40E66 /* 화이팅해야지.3.mp3 */; };
-		3CFEE0DA2A13396F00C40E66 /* 화이팅해야지.4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CFEE0D62A13396F00C40E66 /* 화이팅해야지.4.mp3 */; };
-		3CFEE0DB2A13396F00C40E66 /* 화이팅해야지.1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CFEE0D72A13396F00C40E66 /* 화이팅해야지.1.mp3 */; };
 		3CFEE0DD2A133A2A00C40E66 /* OnboardingDetailView4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFEE0DC2A133A2A00C40E66 /* OnboardingDetailView4.swift */; };
-		3CFEE0E22A133B5600C40E66 /* 화이팅해야지.2.mov in Resources */ = {isa = PBXBuildFile; fileRef = 3CFEE0DE2A133B5600C40E66 /* 화이팅해야지.2.mov */; };
-		3CFEE0E32A133B5600C40E66 /* 화이팅해야지.4.mov in Resources */ = {isa = PBXBuildFile; fileRef = 3CFEE0DF2A133B5600C40E66 /* 화이팅해야지.4.mov */; };
-		3CFEE0E42A133B5600C40E66 /* 화이팅해야지.1.mov in Resources */ = {isa = PBXBuildFile; fileRef = 3CFEE0E02A133B5600C40E66 /* 화이팅해야지.1.mov */; };
-		3CFEE0E52A133B5600C40E66 /* 화이팅해야지.3.mov in Resources */ = {isa = PBXBuildFile; fileRef = 3CFEE0E12A133B5600C40E66 /* 화이팅해야지.3.mov */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -141,6 +143,16 @@
 		3CC993002A135D9800A81B1D /* VideoViewSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewSheet.swift; sourceTree = "<group>"; };
 		3CC993022A136B6200A81B1D /* PartSellectVideoTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartSellectVideoTabView.swift; sourceTree = "<group>"; };
 		3CC993042A13AD7A00A81B1D /* OnboardingFrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFrameView.swift; sourceTree = "<group>"; };
+		3CD63E712A13EA1A00F7EE58 /* 화이팅해야지.1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "화이팅해야지.1.mp3"; sourceTree = "<group>"; };
+		3CD63E722A13EA1A00F7EE58 /* 화이팅해야지.4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "화이팅해야지.4.mp3"; sourceTree = "<group>"; };
+		3CD63E732A13EA1A00F7EE58 /* 화이팅해야지.2.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "화이팅해야지.2.mov"; sourceTree = "<group>"; };
+		3CD63E742A13EA1A00F7EE58 /* 화이팅해야지.3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "화이팅해야지.3.mp3"; sourceTree = "<group>"; };
+		3CD63E752A13EA1A00F7EE58 /* 화이팅해야지.2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "화이팅해야지.2.mp3"; sourceTree = "<group>"; };
+		3CD63E762A13EA1A00F7EE58 /* 화이팅해야지.4.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "화이팅해야지.4.mov"; sourceTree = "<group>"; };
+		3CD63E772A13EA1A00F7EE58 /* 화이팅해야지.3.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "화이팅해야지.3.mov"; sourceTree = "<group>"; };
+		3CD63E782A13EA1A00F7EE58 /* 화이팅해야지.1.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "화이팅해야지.1.mov"; sourceTree = "<group>"; };
+		3CD63E812A14056800F7EE58 /* CameraGuideViewDetail1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraGuideViewDetail1.swift; sourceTree = "<group>"; };
+		3CD63E832A14057500F7EE58 /* CameraGuideViewDetail2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraGuideViewDetail2.swift; sourceTree = "<group>"; };
 		3CF1BF112A0E1145008C4A1D /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		3CF1BF132A0E11BE008C4A1D /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		3CF7459C2A120D420013A5EE /* AnimatedImageDanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedImageDanceView.swift; sourceTree = "<group>"; };
@@ -158,15 +170,7 @@
 		3CFEE0CD2A12C35900C40E66 /* CameraGuide.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = CameraGuide.mov; sourceTree = "<group>"; };
 		3CFEE0CE2A12C35900C40E66 /* OMG.3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = OMG.3.mp3; sourceTree = "<group>"; };
 		3CFEE0CF2A12C35900C40E66 /* OMG.4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = OMG.4.mp3; sourceTree = "<group>"; };
-		3CFEE0D42A13396F00C40E66 /* 화이팅해야지.2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "화이팅해야지.2.mp3"; path = "../../../../Downloads/파이팅해야지 음원/화이팅해야지.2.mp3"; sourceTree = "<group>"; };
-		3CFEE0D52A13396F00C40E66 /* 화이팅해야지.3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "화이팅해야지.3.mp3"; path = "../../../../Downloads/파이팅해야지 음원/화이팅해야지.3.mp3"; sourceTree = "<group>"; };
-		3CFEE0D62A13396F00C40E66 /* 화이팅해야지.4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "화이팅해야지.4.mp3"; path = "../../../../Downloads/파이팅해야지 음원/화이팅해야지.4.mp3"; sourceTree = "<group>"; };
-		3CFEE0D72A13396F00C40E66 /* 화이팅해야지.1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "화이팅해야지.1.mp3"; path = "../../../../Downloads/파이팅해야지 음원/화이팅해야지.1.mp3"; sourceTree = "<group>"; };
 		3CFEE0DC2A133A2A00C40E66 /* OnboardingDetailView4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDetailView4.swift; sourceTree = "<group>"; };
-		3CFEE0DE2A133B5600C40E66 /* 화이팅해야지.2.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "화이팅해야지.2.mov"; path = "../../../../Downloads/화이팅해야지.2.mov"; sourceTree = "<group>"; };
-		3CFEE0DF2A133B5600C40E66 /* 화이팅해야지.4.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "화이팅해야지.4.mov"; path = "../../../../Downloads/화이팅해야지.4.mov"; sourceTree = "<group>"; };
-		3CFEE0E02A133B5600C40E66 /* 화이팅해야지.1.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "화이팅해야지.1.mov"; path = "../../../../Downloads/화이팅해야지.1.mov"; sourceTree = "<group>"; };
-		3CFEE0E12A133B5600C40E66 /* 화이팅해야지.3.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "화이팅해야지.3.mov"; path = "../../../../Downloads/화이팅해야지.3.mov"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,14 +225,14 @@
 			isa = PBXGroup;
 			children = (
 				3C2150AB2A063909005F02D0 /* Preview Assets.xcassets */,
-				3CFEE0E02A133B5600C40E66 /* 화이팅해야지.1.mov */,
-				3CFEE0DE2A133B5600C40E66 /* 화이팅해야지.2.mov */,
-				3CFEE0E12A133B5600C40E66 /* 화이팅해야지.3.mov */,
-				3CFEE0DF2A133B5600C40E66 /* 화이팅해야지.4.mov */,
-				3CFEE0D72A13396F00C40E66 /* 화이팅해야지.1.mp3 */,
-				3CFEE0D42A13396F00C40E66 /* 화이팅해야지.2.mp3 */,
-				3CFEE0D52A13396F00C40E66 /* 화이팅해야지.3.mp3 */,
-				3CFEE0D62A13396F00C40E66 /* 화이팅해야지.4.mp3 */,
+				3CD63E782A13EA1A00F7EE58 /* 화이팅해야지.1.mov */,
+				3CD63E712A13EA1A00F7EE58 /* 화이팅해야지.1.mp3 */,
+				3CD63E732A13EA1A00F7EE58 /* 화이팅해야지.2.mov */,
+				3CD63E752A13EA1A00F7EE58 /* 화이팅해야지.2.mp3 */,
+				3CD63E772A13EA1A00F7EE58 /* 화이팅해야지.3.mov */,
+				3CD63E742A13EA1A00F7EE58 /* 화이팅해야지.3.mp3 */,
+				3CD63E762A13EA1A00F7EE58 /* 화이팅해야지.4.mov */,
+				3CD63E722A13EA1A00F7EE58 /* 화이팅해야지.4.mp3 */,
 				3CFEE0CD2A12C35900C40E66 /* CameraGuide.mov */,
 				3CFEE0CE2A12C35900C40E66 /* OMG.3.mp3 */,
 				3CFEE0CF2A12C35900C40E66 /* OMG.4.mp3 */,
@@ -414,6 +418,8 @@
 			isa = PBXGroup;
 			children = (
 				3CA3C8812A10C63B0096CEC4 /* CameraGuideView.swift */,
+				3CD63E812A14056800F7EE58 /* CameraGuideViewDetail1.swift */,
+				3CD63E832A14057500F7EE58 /* CameraGuideViewDetail2.swift */,
 			);
 			path = CameraGuideView;
 			sourceTree = "<group>";
@@ -500,26 +506,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CFEE0E52A133B5600C40E66 /* 화이팅해야지.3.mov in Resources */,
-				3CFEE0DB2A13396F00C40E66 /* 화이팅해야지.1.mp3 in Resources */,
 				3CFEE0D32A12C35900C40E66 /* OMG.4.mp3 in Resources */,
+				3CD63E7D2A13EA1A00F7EE58 /* 화이팅해야지.2.mp3 in Resources */,
+				3CD63E802A13EA1A00F7EE58 /* 화이팅해야지.1.mov in Resources */,
 				3CA3C87E2A1004AC0096CEC4 /* OMG.2.mov in Resources */,
+				3CD63E7F2A13EA1A00F7EE58 /* 화이팅해야지.3.mov in Resources */,
+				3CD63E7C2A13EA1A00F7EE58 /* 화이팅해야지.3.mp3 in Resources */,
 				3CFEE0D22A12C35900C40E66 /* OMG.3.mp3 in Resources */,
-				3CFEE0D82A13396F00C40E66 /* 화이팅해야지.2.mp3 in Resources */,
-				3CFEE0E42A133B5600C40E66 /* 화이팅해야지.1.mov in Resources */,
 				3CFD27312A10DF77003B5C42 /* OMG.2.mp3 in Resources */,
 				3CFEE0D12A12C35900C40E66 /* CameraGuide.mov in Resources */,
-				3CFEE0D92A13396F00C40E66 /* 화이팅해야지.3.mp3 in Resources */,
-				3CFEE0E22A133B5600C40E66 /* 화이팅해야지.2.mov in Resources */,
+				3CD63E7A2A13EA1A00F7EE58 /* 화이팅해야지.4.mp3 in Resources */,
 				3CFD272F2A10DF70003B5C42 /* OMG.1.mp3 in Resources */,
+				3CD63E792A13EA1A00F7EE58 /* 화이팅해야지.1.mp3 in Resources */,
 				3CFEE0D02A12C35900C40E66 /* OMG.5.mp3 in Resources */,
 				3C2150AC2A063909005F02D0 /* Preview Assets.xcassets in Resources */,
 				3C2150A92A063909005F02D0 /* Assets.xcassets in Resources */,
+				3CD63E7B2A13EA1A00F7EE58 /* 화이팅해야지.2.mov in Resources */,
 				3CF7459F2A120DBA0013A5EE /* Lottie.json in Resources */,
 				3C21510B2A093F57005F02D0 /* GoogleService-Info.plist in Resources */,
 				3CA3C87C2A1004A40096CEC4 /* OMG.1.mov in Resources */,
-				3CFEE0DA2A13396F00C40E66 /* 화이팅해야지.4.mp3 in Resources */,
-				3CFEE0E32A133B5600C40E66 /* 화이팅해야지.4.mov in Resources */,
+				3CD63E7E2A13EA1A00F7EE58 /* 화이팅해야지.4.mov in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,6 +557,7 @@
 				3CFEE0C32A12B2A200C40E66 /* FinalResult.xcdatamodeld in Sources */,
 				3C2150BD2A063BA2005F02D0 /* OnboardingDetailView3.swift in Sources */,
 				3C4A1B0F2A0D2C1200A218E2 /* AnimatedImageDanceFrameView.swift in Sources */,
+				3CD63E822A14056800F7EE58 /* CameraGuideViewDetail1.swift in Sources */,
 				3C2150B52A0639B2005F02D0 /* SplashView.swift in Sources */,
 				3C2150C72A06467D005F02D0 /* SignUpView.swift in Sources */,
 				3CF7459D2A120D420013A5EE /* AnimatedImageDanceView.swift in Sources */,
@@ -559,6 +566,7 @@
 				3CFEE0DD2A133A2A00C40E66 /* OnboardingDetailView4.swift in Sources */,
 				3C2151032A081E66005F02D0 /* CameraPreview.swift in Sources */,
 				3C2150DF2A07EAD0005F02D0 /* Music.swift in Sources */,
+				3CD63E842A14057500F7EE58 /* CameraGuideViewDetail2.swift in Sources */,
 				3C4A1B152A0D4E8D00A218E2 /* PartSellectTabView.swift in Sources */,
 				3C2150E22A07EAE5005F02D0 /* UserMusic.swift in Sources */,
 				3CFEE0CB2A12B72500C40E66 /* PersistenceController.swift in Sources */,

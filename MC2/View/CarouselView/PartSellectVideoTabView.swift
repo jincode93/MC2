@@ -19,8 +19,7 @@ struct PartSellectVideoTabView: View {
     var music: Music
     
     var body: some View {
-        ZStack {
-            Color.black.ignoresSafeArea()
+        NavigationView {
             
             VStack {
                 Text("\(music.musicTitle) - \(music.singer)")
@@ -133,7 +132,7 @@ struct PartSellectVideoTabView: View {
                     }
                 }
             }
-        }
+        } // NavigationView
         .onAppear {
             danceStore.selectedMusic = self.music
         }

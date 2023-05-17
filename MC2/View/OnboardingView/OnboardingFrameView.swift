@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct OnboardingFrameView: View {
-    @State var images: [UIImage]
-    @State var duration: Double
+    @Binding var images: [UIImage]
+    @Binding var duration: Double
     
     var body: some View {
         ZStack {
-            AnimatedImageDanceView(images: images, duration: duration)
+            AnimatedImageDanceView(images: $images, duration: $duration)
                 .aspectRatio(contentMode: .fill)
         }
     }

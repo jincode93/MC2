@@ -9,9 +9,8 @@ import SwiftUI
 import UIKit
 
 struct AnimatedImageDanceView: UIViewRepresentable {
-    let images: [UIImage]
-    let duration: TimeInterval
-    // let isAnimating: Bool
+    @Binding var images: [UIImage]
+    @Binding var duration: TimeInterval
     
     func makeUIView(context: Context) -> UIView {
         let view = UIView()
@@ -39,10 +38,6 @@ struct AnimatedImageDanceView: UIViewRepresentable {
             imageView.animationImages = images
             imageView.animationDuration = duration
             imageView.startAnimating()
-            
-//            if !isAnimating {
-//                imageView.stopAnimating()
-//            }
         }
     }
 }

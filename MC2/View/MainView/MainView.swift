@@ -93,9 +93,10 @@ struct MainView: View {
                     }
                 }
                 .padding(.horizontal, 5)
-            }
+            } // ScrollView
             .background(Color.black)
-            .ignoresSafeArea(edges: .bottom)
+            // .ignoresSafeArea(edges: .bottom)
+            // .navigationBarHidden(true)
             .navigationBarItems(
                 leading:
                     Image("logo")
@@ -120,9 +121,11 @@ struct MainView: View {
                     }
                     .foregroundColor(Color.stringColor)
             )
-            .modifier(NavigationBarModifier(backgroundColor: .black))
-        }
-        .navigationViewStyle(.stack)
+            .toolbarBackground(
+                Color.black, for: .navigationBar
+            )
+            // .modifier(NavigationBarModifier(backgroundColor: .black))
+        } // NavigationView
     }
 }
 

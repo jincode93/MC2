@@ -13,15 +13,32 @@ struct GalleryView: View {
     @EnvironmentObject var dataManager: DataManager
     @Environment(\.presentationMode) var presentationMode
     
+    let columns: [GridItem] = [
+            GridItem(.flexible(), spacing: 15, alignment: nil),
+            GridItem(.flexible(), spacing: 15, alignment: nil)
+        ]
+
+    
     var body: some View {
         ZStack {
             Color.black.ignoresSafeArea()
             
             ScrollView {
-                VStack {
+//                VStack {
+//                    ForEach(dataManager.resultArr) { result in
+//                        AnimatedImageFrameView(images: result.imageArr, duration: 2.5)
+//                            .frame(width: UIScreen.main.bounds.width * 0.9)
+//                    }
+//                }
+                LazyVGrid(columns: columns,
+                          alignment: .center,
+                          spacing: 0) {
                     ForEach(dataManager.resultArr) { result in
                         AnimatedImageFrameView(images: result.imageArr, duration: 2.5)
-                            .frame(width: UIScreen.main.bounds.width * 0.9)
+                            .scaledToFill()
+                            .frame(width: UIScreen.main.bounds.width * 0.45, height: UIScreen.main.bounds.height * 0.3)
+                            .cornerRadius(20)
+                            .padding(.top, 15)
                     }
                 }
             }

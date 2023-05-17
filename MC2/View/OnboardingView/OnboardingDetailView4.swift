@@ -12,14 +12,22 @@ struct OnboardingDetailView4: View {
                                             UIImage(named: "OnboardingGif6")!,
                                             UIImage(named: "OnboardingGif7")!,
                                             UIImage(named: "OnboardingGif8")!]
+    @State private var duration: Double = 0.0
+    
     var body: some View {
         VStack {
-            OnboardingFrameView(images: images, duration: 2.0)
+            OnboardingFrameView(images: $images, duration: $duration)
                 .scaledToFill()
             
             Rectangle()
                 .fill(Color.black)
                 .frame(height: 40)
+        }
+        .onAppear {
+            duration = 2.0
+        }
+        .onDisappear {
+            duration = 0.0
         }
     }
 }

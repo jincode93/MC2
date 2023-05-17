@@ -9,14 +9,14 @@ import SwiftUI
 
 struct AnimatedImageDanceFrameView: View {
     @EnvironmentObject var danceStore: DanceStore
-    let images: [UIImage]
-    let duration: TimeInterval
+    @State var images: [UIImage]
+    @State var duration: TimeInterval
     var index: Int
     var count: Int
     
     var body: some View {
         ZStack {
-            AnimatedImageDanceView(images: images, duration: duration)
+            AnimatedImageDanceView(images: $images, duration: $duration)
                 .aspectRatio(contentMode: .fill)
                 .zIndex(0)
         }

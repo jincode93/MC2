@@ -17,19 +17,12 @@ struct GalleryView: View {
             GridItem(.flexible(), spacing: 15, alignment: nil),
             GridItem(.flexible(), spacing: 15, alignment: nil)
         ]
-
     
     var body: some View {
         ZStack {
             Color.black.ignoresSafeArea()
             
             ScrollView {
-//                VStack {
-//                    ForEach(dataManager.resultArr) { result in
-//                        AnimatedImageFrameView(images: result.imageArr, duration: 2.5)
-//                            .frame(width: UIScreen.main.bounds.width * 0.9)
-//                    }
-//                }
                 LazyVGrid(columns: columns,
                           alignment: .center,
                           spacing: 0) {
@@ -42,7 +35,6 @@ struct GalleryView: View {
                     }
                 }
             }
-            .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: Button(action: {
                 presentationMode.wrappedValue.dismiss()
             }, label: {

@@ -10,13 +10,12 @@ import AVKit
 
 struct VideoViewSheet: View {
     @EnvironmentObject var danceStore: DanceStore
-//    @EnvironmentObject var viewRouter: ViewRouter
     @EnvironmentObject var videoStore: VideoStore
     
     @Environment(\.presentationMode) var presentationMode
     
-    @Binding var currentTab: Int
-    @State private var makeVideo: Bool = false
+    @State var music: Music
+    @State var dancePart: DancePart
     
     var body: some View {
         ZStack {
@@ -50,28 +49,28 @@ struct VideoViewSheet: View {
                 Spacer()
                 
                 VStack {
-                    HStack {
-                        Text("\(danceStore.selectedMusic!.musicTitle)")
-                            .font(.title3)
-                            .foregroundColor(Color.secondary)
-
-                        Text("Part - \(danceStore.tabIndex + 1)")
-                            .font(.headline)
-                            .foregroundColor(Color.secondary)
-                    }
-                    .padding(.top)
+                    Text("\(music.musicTitle) - Part.\(dancePart.partIndex)")
+                        .font(.title3)
+                        .foregroundColor(.stringColor)
                 }
-                if makeVideo {
-                    let player = videoStore.player
-                    VideoPlayer(player: player)
-                        .frame(maxWidth: UIScreen.main.bounds.width * 0.9)
-                        .cornerRadius(20)
-                        .zIndex(3)
-                } else {
-                    Text("비디오 로딩을 실패했습니다.🥲")
-                        .foregroundColor(.white)
-                        .frame(maxWidth: UIScreen.main.bounds.width * 0.9)
-                        .cornerRadius(20)
+                
+                ZStack {
+                    Image("videoFrame")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: UIScreen.main.bounds.width)
+                        .zIndex(1)
+                    
+                    if let player = videoStore.player {
+                        VideoPlayer(player: player)
+                            .frame(maxWidth: UIScreen.main.bounds.width * 0.9)
+                            .cornerRadius(20)
+                    } else {
+                        Text("비디오 로딩을 실패했습니다.🥲")
+                            .foregroundColor(.white)
+                            .frame(maxWidth: UIScreen.main.bounds.width * 0.9)
+                            .cornerRadius(20)
+                    }
                 }
                 
                 Spacer()
@@ -79,12 +78,7 @@ struct VideoViewSheet: View {
             .navigationBarBackButtonHidden(true)
         }
         .onAppear {
-            DispatchQueue.main.async {
-                danceStore.selectedDancePart = danceStore.selectedMusic?.dancePartArr[danceStore.tabIndex]
-                videoStore.videoPlayer(resource: "\(danceStore.selectedMusic!.musicTitle).\(currentTab + 1)", isMuted: false, repeatVideo: true)
-                videoStore.play()
-            }
-            makeVideo.toggle()
+            videoStore.play()
         }
         .onDisappear {
             videoStore.pause()

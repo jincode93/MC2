@@ -16,7 +16,8 @@ struct PartSellectVideoTabView: View {
     
     @State private var currentTab: Int = 0
     
-    var music: Music
+    let music: Music
+    @State var dancePart: DancePart = DancePart(id: "", partIndex: 0, partMusic: "", dancePauseImage: [], danceFrameImage: [], danceVideo: "")
     
     var body: some View {
         ZStack {
@@ -62,16 +63,7 @@ struct PartSellectVideoTabView: View {
                                         .frame(width: UIScreen.main.bounds.width)
                                         .zIndex(1)
                                     
-                                    if let player = videoStore.player {
-                                        VideoPlayer(player: player)
-                                            .frame(maxWidth: UIScreen.main.bounds.width * 0.9)
-                                            .cornerRadius(20)
-                                    } else {
-                                        Text("비디오 로딩을 실패했습니다.🥲")
-                                            .foregroundColor(.white)
-                                            .frame(maxWidth: UIScreen.main.bounds.width * 0.9)
-                                            .cornerRadius(20)
-                                    }
+                                    PartSellectedVideoView(musicTitle: music.musicTitle, partIndex: index + 1)
                                 }
                                 
                                 Rectangle()
@@ -88,57 +80,44 @@ struct PartSellectVideoTabView: View {
                 
                 Spacer()
                 
-                Button {
-                    danceStore.selectedDancePart = danceStore.selectedMusic?.dancePartArr[currentTab]
-                    print(danceStore.selectedDancePart?.partIndex)
+                NavigationLink {
+                    MotionSplitView(music: music, dancePart: dancePart)
                 } label: {
-                    NavigationLink {
-                        MotionSplitView(currentTab: currentTab)
-                    } label: {
-                        Text("선택")
-                            .modifier(LongButtonModifier())
-                    }
+                    Text("선택")
+                        .modifier(LongButtonModifier())
                 }
             } // VStack
-        }
-        .onAppear {
-            videoStore.videoPlayer(resource: "\(music.musicTitle).\(currentTab + 1)", isMuted: false, repeatVideo: true)
-            videoStore.play()
-        }
-        .onChange(of: currentTab, perform: { newValue in
-            videoStore.pause()
-            videoStore.videoPlayer(resource: "\(music.musicTitle).\(currentTab + 1)", isMuted: false, repeatVideo: true)
-            videoStore.play()
-        })
-        .onDisappear {
-            videoStore.pause()
-        }
-        .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading:
-                                Button(action: {
-            presentationMode.wrappedValue.dismiss()
-        }, label: {
-            Image(systemName: "chevron.left")
-                .font(.title3)
-                .foregroundColor(.stringColor)
-                .bold()
-        })
-        )
-        .toolbar {
-            ToolbarItem(placement: .principal) {
-                VStack {
-                    Text("안무 구간 선택")
-                        .font(.title3)
-                        .foregroundColor(.white)
-                        .bold()
-                }
-            }
-        }
+            .navigationTitle(Text("안무 구간 선택"))
+            .navigationBarTitleDisplayMode(.inline)
+        } // ZStack
         .onAppear {
             danceStore.selectedMusic = self.music
+            dancePart = music.dancePartArr[0]
         }
-        .onDisappear {
-            musicStore.stopSound()
-        }
+        .onChange(of: currentTab, perform: { newValue in
+            dancePart = music.dancePartArr[newValue]
+        })
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(
+            leading:
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }, label: {
+                    Image(systemName: "chevron.left")
+                        .font(.title3)
+                        .foregroundColor(.stringColor)
+                        .bold()
+                })
+        )
+//        .toolbar {
+//            ToolbarItem(placement: .principal) {
+//                VStack {
+//                    Text("안무 구간 선택")
+//                        .font(.title3)
+//                        .foregroundColor(.white)
+//                        .bold()
+//                }
+//            }
+//        }
     }
 }

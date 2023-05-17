@@ -24,7 +24,7 @@ struct CameraView: View {
     var body: some View {
         GeometryReader { reader in
             ZStack {
-                Color.black.edgesIgnoringSafeArea(.all)
+                Color.black.ignoresSafeArea()
                 
                 VStack {
                     ZStack {
@@ -124,26 +124,31 @@ struct CameraView: View {
             .onAppear {
                 danceFrame = danceStore.selectedDancePart?.danceFrameImage[0] ?? UIImage()
             }
-            .navigationBarBackButtonHidden(true)
-            .navigationBarItems(leading: Button(action: {
-                presentationMode.wrappedValue.dismiss()
-            }, label: {
-                Image(systemName: "chevron.left")
-                    .foregroundColor(.cyan)
-            }),
-                                trailing:
-                                    HStack(spacing: 20) {
-                Button {
-                    cameraStore.guideViewToggle.toggle()
-                } label: {
-                    Image(systemName: "questionmark.circle")
-                        .font(.title3)
-                        .foregroundColor(.stringColor)
-                        .bold()
-                        .opacity(isbuttonOpacity ? 0 : 1)
-                }
+            .onDisappear {
+                cameraStore.guideViewToggle = true
             }
-                .foregroundColor(Color.stringColor)
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(
+                leading:
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }, label: {
+                        Image(systemName: "chevron.left")
+                            .foregroundColor(.cyan)
+                    }),
+                trailing:
+                    HStack(spacing: 20) {
+                        Button {
+                            cameraStore.guideViewToggle.toggle()
+                        } label: {
+                            Image(systemName: "questionmark.circle")
+                                .font(.title3)
+                                .foregroundColor(.stringColor)
+                                .bold()
+                                .opacity(isbuttonOpacity ? 0 : 1)
+                        }
+                    }
+                    .foregroundColor(Color.stringColor)
             )
             .toolbar {
                 ToolbarItem(placement: .principal) {
@@ -153,9 +158,6 @@ struct CameraView: View {
                             .foregroundColor(.white)
                     }
                 }
-            }
-            .onDisappear {
-                cameraStore.guideViewToggle = true
             }
         }
     }

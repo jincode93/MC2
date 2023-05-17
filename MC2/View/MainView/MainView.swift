@@ -50,11 +50,6 @@ struct MainView: View {
                             
                             VStack(alignment: .leading) {
                                 HStack {
-                                    Text("뚝딱님")
-                                        .font(.title3)
-                                        .foregroundColor(.white)
-                                        .fontWeight(.bold)
-                                    
                                     Text("DDOK-DDAK")
                                         .font(.title3)
                                         .foregroundColor(.pointColor)
@@ -98,7 +93,7 @@ struct MainView: View {
                     .padding(.horizontal, 5)
                 } // ScrollView
             }
-            // .navigationBarHidden(true)
+            .navigationBarBackButtonHidden()
             .navigationBarItems(
                 leading:
                     Image("logo")
@@ -126,7 +121,6 @@ struct MainView: View {
             .toolbarBackground(
                 Color.black, for: .navigationBar
             )
-            // .modifier(NavigationBarModifier(backgroundColor: .black))
         } // NavigationView
     }
 }

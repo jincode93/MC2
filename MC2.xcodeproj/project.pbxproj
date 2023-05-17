@@ -64,14 +64,6 @@
 		3CD63E862A14D17B00F7EE58 /* PartSellectedVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD63E852A14D17B00F7EE58 /* PartSellectedVideoView.swift */; };
 		3CD63E882A1522A800F7EE58 /* GalleryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD63E872A1522A800F7EE58 /* GalleryDetailView.swift */; };
 		3CD63E8A2A1522ED00F7EE58 /* GalleryFrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD63E892A1522ED00F7EE58 /* GalleryFrameView.swift */; };
-		3CD63E8F2A15360A00F7EE58 /* Fighting.1.mov in Resources */ = {isa = PBXBuildFile; fileRef = 3CD63E8B2A15360A00F7EE58 /* Fighting.1.mov */; };
-		3CD63E902A15360A00F7EE58 /* Fighting.2.mov in Resources */ = {isa = PBXBuildFile; fileRef = 3CD63E8C2A15360A00F7EE58 /* Fighting.2.mov */; };
-		3CD63E912A15360A00F7EE58 /* Fighting.3.mov in Resources */ = {isa = PBXBuildFile; fileRef = 3CD63E8D2A15360A00F7EE58 /* Fighting.3.mov */; };
-		3CD63E922A15360A00F7EE58 /* Fighting.4.mov in Resources */ = {isa = PBXBuildFile; fileRef = 3CD63E8E2A15360A00F7EE58 /* Fighting.4.mov */; };
-		3CD63E972A15362200F7EE58 /* Fighting.3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CD63E932A15362200F7EE58 /* Fighting.3.mp3 */; };
-		3CD63E982A15362200F7EE58 /* Fighting.1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CD63E942A15362200F7EE58 /* Fighting.1.mp3 */; };
-		3CD63E992A15362200F7EE58 /* Fighting.4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CD63E952A15362200F7EE58 /* Fighting.4.mp3 */; };
-		3CD63E9A2A15362200F7EE58 /* Fighting.2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CD63E962A15362200F7EE58 /* Fighting.2.mp3 */; };
 		3CF1BF122A0E1145008C4A1D /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1BF112A0E1145008C4A1D /* LottieView.swift */; };
 		3CF1BF182A0E12A3008C4A1D /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 3CF1BF172A0E12A3008C4A1D /* Lottie */; };
 		3CF7459D2A120D420013A5EE /* AnimatedImageDanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF7459C2A120D420013A5EE /* AnimatedImageDanceView.swift */; };
@@ -90,6 +82,14 @@
 		3CFEE0D22A12C35900C40E66 /* OMG.3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CFEE0CE2A12C35900C40E66 /* OMG.3.mp3 */; };
 		3CFEE0D32A12C35900C40E66 /* OMG.4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CFEE0CF2A12C35900C40E66 /* OMG.4.mp3 */; };
 		3CFEE0DD2A133A2A00C40E66 /* OnboardingDetailView4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFEE0DC2A133A2A00C40E66 /* OnboardingDetailView4.swift */; };
+		861D099A2A153E10006C6DA0 /* Fighting.1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 861D09962A153E10006C6DA0 /* Fighting.1.mp3 */; };
+		861D099B2A153E10006C6DA0 /* Fighting.2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 861D09972A153E10006C6DA0 /* Fighting.2.mp3 */; };
+		861D099C2A153E10006C6DA0 /* Fighting.3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 861D09982A153E10006C6DA0 /* Fighting.3.mp3 */; };
+		861D099D2A153E10006C6DA0 /* Fighting.4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 861D09992A153E10006C6DA0 /* Fighting.4.mp3 */; };
+		861D09A22A153E21006C6DA0 /* Fighting.4.mov in Resources */ = {isa = PBXBuildFile; fileRef = 861D099E2A153E21006C6DA0 /* Fighting.4.mov */; };
+		861D09A32A153E21006C6DA0 /* Fighting.1.mov in Resources */ = {isa = PBXBuildFile; fileRef = 861D099F2A153E21006C6DA0 /* Fighting.1.mov */; };
+		861D09A42A153E21006C6DA0 /* Fighting3.mov in Resources */ = {isa = PBXBuildFile; fileRef = 861D09A02A153E21006C6DA0 /* Fighting3.mov */; };
+		861D09A52A153E21006C6DA0 /* Fighting.2.mov in Resources */ = {isa = PBXBuildFile; fileRef = 861D09A12A153E21006C6DA0 /* Fighting.2.mov */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -146,14 +146,6 @@
 		3CD63E852A14D17B00F7EE58 /* PartSellectedVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartSellectedVideoView.swift; sourceTree = "<group>"; };
 		3CD63E872A1522A800F7EE58 /* GalleryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryDetailView.swift; sourceTree = "<group>"; };
 		3CD63E892A1522ED00F7EE58 /* GalleryFrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryFrameView.swift; sourceTree = "<group>"; };
-		3CD63E8B2A15360A00F7EE58 /* Fighting.1.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = Fighting.1.mov; path = ../../../../../Downloads/Fighting.1.mov; sourceTree = "<group>"; };
-		3CD63E8C2A15360A00F7EE58 /* Fighting.2.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = Fighting.2.mov; path = ../../../../../Downloads/Fighting.2.mov; sourceTree = "<group>"; };
-		3CD63E8D2A15360A00F7EE58 /* Fighting.3.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = Fighting.3.mov; path = ../../../../../Downloads/Fighting.3.mov; sourceTree = "<group>"; };
-		3CD63E8E2A15360A00F7EE58 /* Fighting.4.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = Fighting.4.mov; path = ../../../../../Downloads/Fighting.4.mov; sourceTree = "<group>"; };
-		3CD63E932A15362200F7EE58 /* Fighting.3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Fighting.3.mp3; path = "../../../../../Downloads/파이팅해야지 음원/Fighting.3.mp3"; sourceTree = "<group>"; };
-		3CD63E942A15362200F7EE58 /* Fighting.1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Fighting.1.mp3; path = "../../../../../Downloads/파이팅해야지 음원/Fighting.1.mp3"; sourceTree = "<group>"; };
-		3CD63E952A15362200F7EE58 /* Fighting.4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Fighting.4.mp3; path = "../../../../../Downloads/파이팅해야지 음원/Fighting.4.mp3"; sourceTree = "<group>"; };
-		3CD63E962A15362200F7EE58 /* Fighting.2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Fighting.2.mp3; path = "../../../../../Downloads/파이팅해야지 음원/Fighting.2.mp3"; sourceTree = "<group>"; };
 		3CF1BF112A0E1145008C4A1D /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		3CF7459C2A120D420013A5EE /* AnimatedImageDanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedImageDanceView.swift; sourceTree = "<group>"; };
 		3CF7459E2A120DBA0013A5EE /* Lottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Lottie.json; sourceTree = "<group>"; };
@@ -171,6 +163,14 @@
 		3CFEE0CE2A12C35900C40E66 /* OMG.3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = OMG.3.mp3; sourceTree = "<group>"; };
 		3CFEE0CF2A12C35900C40E66 /* OMG.4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = OMG.4.mp3; sourceTree = "<group>"; };
 		3CFEE0DC2A133A2A00C40E66 /* OnboardingDetailView4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDetailView4.swift; sourceTree = "<group>"; };
+		861D09962A153E10006C6DA0 /* Fighting.1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Fighting.1.mp3; sourceTree = "<group>"; };
+		861D09972A153E10006C6DA0 /* Fighting.2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Fighting.2.mp3; sourceTree = "<group>"; };
+		861D09982A153E10006C6DA0 /* Fighting.3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Fighting.3.mp3; sourceTree = "<group>"; };
+		861D09992A153E10006C6DA0 /* Fighting.4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Fighting.4.mp3; sourceTree = "<group>"; };
+		861D099E2A153E21006C6DA0 /* Fighting.4.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Fighting.4.mov; sourceTree = "<group>"; };
+		861D099F2A153E21006C6DA0 /* Fighting.1.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Fighting.1.mov; sourceTree = "<group>"; };
+		861D09A02A153E21006C6DA0 /* Fighting3.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Fighting3.mov; sourceTree = "<group>"; };
+		861D09A12A153E21006C6DA0 /* Fighting.2.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Fighting.2.mov; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,14 +225,14 @@
 			isa = PBXGroup;
 			children = (
 				3C2150AB2A063909005F02D0 /* Preview Assets.xcassets */,
-				3CD63E942A15362200F7EE58 /* Fighting.1.mp3 */,
-				3CD63E962A15362200F7EE58 /* Fighting.2.mp3 */,
-				3CD63E932A15362200F7EE58 /* Fighting.3.mp3 */,
-				3CD63E952A15362200F7EE58 /* Fighting.4.mp3 */,
-				3CD63E8B2A15360A00F7EE58 /* Fighting.1.mov */,
-				3CD63E8C2A15360A00F7EE58 /* Fighting.2.mov */,
-				3CD63E8D2A15360A00F7EE58 /* Fighting.3.mov */,
-				3CD63E8E2A15360A00F7EE58 /* Fighting.4.mov */,
+				861D09962A153E10006C6DA0 /* Fighting.1.mp3 */,
+				861D09972A153E10006C6DA0 /* Fighting.2.mp3 */,
+				861D09982A153E10006C6DA0 /* Fighting.3.mp3 */,
+				861D09992A153E10006C6DA0 /* Fighting.4.mp3 */,
+				861D099F2A153E21006C6DA0 /* Fighting.1.mov */,
+				861D09A12A153E21006C6DA0 /* Fighting.2.mov */,
+				861D099E2A153E21006C6DA0 /* Fighting.4.mov */,
+				861D09A02A153E21006C6DA0 /* Fighting3.mov */,
 				3CFEE0CD2A12C35900C40E66 /* CameraGuide.mov */,
 				3CFEE0CE2A12C35900C40E66 /* OMG.3.mp3 */,
 				3CFEE0CF2A12C35900C40E66 /* OMG.4.mp3 */,
@@ -506,25 +506,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CD63E922A15360A00F7EE58 /* Fighting.4.mov in Resources */,
-				3CD63E8F2A15360A00F7EE58 /* Fighting.1.mov in Resources */,
+				861D099C2A153E10006C6DA0 /* Fighting.3.mp3 in Resources */,
 				3CFEE0D32A12C35900C40E66 /* OMG.4.mp3 in Resources */,
 				3CA3C87E2A1004AC0096CEC4 /* OMG.2.mov in Resources */,
 				3CFEE0D22A12C35900C40E66 /* OMG.3.mp3 in Resources */,
 				3CFD27312A10DF77003B5C42 /* OMG.2.mp3 in Resources */,
 				3CFEE0D12A12C35900C40E66 /* CameraGuide.mov in Resources */,
-				3CD63E992A15362200F7EE58 /* Fighting.4.mp3 in Resources */,
+				861D099A2A153E10006C6DA0 /* Fighting.1.mp3 in Resources */,
 				3CFD272F2A10DF70003B5C42 /* OMG.1.mp3 in Resources */,
+				861D09A42A153E21006C6DA0 /* Fighting3.mov in Resources */,
 				3CFEE0D02A12C35900C40E66 /* OMG.5.mp3 in Resources */,
-				3CD63E972A15362200F7EE58 /* Fighting.3.mp3 in Resources */,
+				861D09A22A153E21006C6DA0 /* Fighting.4.mov in Resources */,
 				3C2150AC2A063909005F02D0 /* Preview Assets.xcassets in Resources */,
-				3CD63E9A2A15362200F7EE58 /* Fighting.2.mp3 in Resources */,
 				3C2150A92A063909005F02D0 /* Assets.xcassets in Resources */,
 				3CF7459F2A120DBA0013A5EE /* Lottie.json in Resources */,
-				3CD63E982A15362200F7EE58 /* Fighting.1.mp3 in Resources */,
+				861D09A32A153E21006C6DA0 /* Fighting.1.mov in Resources */,
 				3C21510B2A093F57005F02D0 /* GoogleService-Info.plist in Resources */,
-				3CD63E912A15360A00F7EE58 /* Fighting.3.mov in Resources */,
-				3CD63E902A15360A00F7EE58 /* Fighting.2.mov in Resources */,
+				861D099B2A153E10006C6DA0 /* Fighting.2.mp3 in Resources */,
+				861D099D2A153E10006C6DA0 /* Fighting.4.mp3 in Resources */,
+				861D09A52A153E21006C6DA0 /* Fighting.2.mov in Resources */,
 				3CA3C87C2A1004A40096CEC4 /* OMG.1.mov in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

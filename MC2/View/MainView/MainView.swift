@@ -12,12 +12,15 @@ struct MainView: View {
     @EnvironmentObject var userStore: UserStore
     @EnvironmentObject var danceStore: DanceStore
     @State var isSelected: DanceLevel = .EASY
+    
     private var filteredMusic: [Music] {
         switch isSelected {
         case .ALL:
             return danceStore.music
         case .EASY:
+            
             return danceStore.music.filter { $0.danceLevel == "Easy" }
+            
         case .NORMAL:
             return danceStore.music.filter { $0.danceLevel == "Normal" }
         case .HARD:
@@ -88,6 +91,9 @@ struct MainView: View {
                                     MainViewCell(music: music)
                                 }
                             }
+                        }
+                        .onAppear {
+                            print("\(filteredMusic.count)⭐️")
                         }
                     }
                     .padding(.horizontal, 5)

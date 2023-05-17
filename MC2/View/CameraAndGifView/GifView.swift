@@ -19,20 +19,19 @@ struct GifView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack(alignment: .center) {
-                Text("쥬쥬의 DDOK-DDAK\n댄스가 완성 되었어요!")
+                Text("DDOK-DDAK\n댄스가 완성 되었어요!")
                     .font(.title2)
                     .foregroundColor(.white)
                     .bold()
+                    .multilineTextAlignment(.center)
                 
                 Spacer()
                 
                 if !imageArray.isEmpty {
-                    // AnimatedImageView(images: imageArray, duration: 1.0)
                     AnimatedImageFrameView(images: imageArray, duration: 2.5)
                         .aspectRatio(contentMode: .fill)
                         .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.74)
                         .cornerRadius(20)
-                    
                 } else {
                     ProgressView()
                 }
@@ -71,15 +70,10 @@ struct GifView: View {
             }
             .padding(.vertical, 20)
         }
-        .task {
-            await loadImageArray()
-        }
-    }
-    
-    func loadImageArray() async {
-        let loadedImages = await cameraStore.images
-        DispatchQueue.main.async {
-            self.imageArray = loadedImages
+        .onAppear {
+            Task {
+                self.imageArray = cameraStore.images
+            }
         }
     }
 }

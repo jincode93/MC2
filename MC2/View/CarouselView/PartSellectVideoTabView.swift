@@ -12,7 +12,7 @@ struct PartSellectVideoTabView: View {
     @EnvironmentObject var danceStore: DanceStore
     @EnvironmentObject var musicStore: MusicStore
     @EnvironmentObject var videoStore: VideoStore
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dismiss) private var dismiss
     
     @State private var currentTab: Int = 0
     
@@ -67,6 +67,7 @@ struct PartSellectVideoTabView: View {
                                 }
                                 
                                 Rectangle()
+                                    .fill(Color.black)
                                     .frame(height: 40)
                             }
                             .tag(index)
@@ -82,26 +83,25 @@ struct PartSellectVideoTabView: View {
                 
                 NavigationLink {
                     MotionSplitView(music: music, dancePart: dancePart)
+                        .environmentObject(danceStore)
                 } label: {
                     Text("선택")
                         .modifier(LongButtonModifier())
                 }
             } // VStack
-            .navigationTitle(Text("안무 구간 선택"))
-            .navigationBarTitleDisplayMode(.inline)
         } // ZStack
         .onAppear {
-            danceStore.selectedMusic = self.music
-            dancePart = music.dancePartArr[0]
+            if !music.dancePartArr.isEmpty {
+                dancePart = music.dancePartArr[0]
+            }
         }
         .onChange(of: currentTab, perform: { newValue in
             dancePart = music.dancePartArr[newValue]
         })
-        .navigationBarBackButtonHidden(true)
         .navigationBarItems(
             leading:
                 Button(action: {
-                    presentationMode.wrappedValue.dismiss()
+                    dismiss()
                 }, label: {
                     Image(systemName: "chevron.left")
                         .font(.title3)
@@ -109,15 +109,8 @@ struct PartSellectVideoTabView: View {
                         .bold()
                 })
         )
-//        .toolbar {
-//            ToolbarItem(placement: .principal) {
-//                VStack {
-//                    Text("안무 구간 선택")
-//                        .font(.title3)
-//                        .foregroundColor(.white)
-//                        .bold()
-//                }
-//            }
-//        }
+        .navigationTitle(Text("안무 구간 선택"))
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
     }
 }

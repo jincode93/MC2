@@ -62,7 +62,6 @@ final class CameraModel: ObservableObject {
         service.capturePhoto()
     }
     
-    
     func textChanger() {
         self.counter = "5"
         
@@ -97,9 +96,15 @@ final class CameraModel: ObservableObject {
                 }
             }
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + (timer * Double(i)) + 4.0) {
-                self.images.append(self.service.images[i - 1])
-            }
+//            DispatchQueue.main.asyncAfter(deadline: .now() + (timer * Double(i)) + 4.0) {
+//                self.images.append(self.service.images[i - 1])
+//                print("@Log \(self.images.count)")
+//            }
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + (timer * 8.0) + 4.0) {
+            self.images = self.service.images
+            print("@Log images push")
         }
     }
 }

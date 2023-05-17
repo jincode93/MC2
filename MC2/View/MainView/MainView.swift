@@ -93,22 +93,22 @@ struct MainView: View {
                     .padding(.horizontal, 5)
                 } // ScrollView
             }
-            .navigationBarBackButtonHidden()
+            .navigationBarBackButtonHidden(true)
             .navigationBarItems(
                 leading:
                     Image("logo")
                     .resizable()
                     .frame(width: 40),
-                
+
                 trailing:
                     HStack(spacing: 20) {
                         Button {
-                            
+
                         } label: {
                             Image(systemName: "magnifyingglass")
                                 .modifier(NavItemModifier())
                         }
-                        
+
                         NavigationLink {
                             GalleryView()
                         } label: {

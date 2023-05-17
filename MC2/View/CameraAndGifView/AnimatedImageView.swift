@@ -10,7 +10,7 @@ import UIKit
 
 struct AnimatedImageView: UIViewRepresentable {
     let images: [UIImage]
-    let duration: TimeInterval
+    @Binding var duration: TimeInterval
     
     func makeUIView(context: Context) -> UIView {
         let view = UIView()

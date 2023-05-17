@@ -371,7 +371,7 @@ public class CameraService {
                 }, completionHandler: { [weak self] (photoCaptureProcessor) in
                     if let data = photoCaptureProcessor.photoData {
                         self?.photo = Photo(originalData: data)
-                        self?.images.append(UIImage(data: data)!)
+                        self?.images.append(UIImage(data: data) ?? UIImage())
                         print("passing photo")
                     } else {
                         print("No photo data")
@@ -382,7 +382,8 @@ public class CameraService {
                     self?.sessionQueue.async {
                         self?.inProgressPhotoCaptureDelegates[photoCaptureProcessor.requestedPhotoSettings.uniqueID] = nil
                     }
-                }, photoProcessingHandler: { [weak self] animate in                    if animate {
+                }, photoProcessingHandler: { [weak self] animate in
+                    if animate {
                         self?.shouldShowSpinner = true
                     } else {
                         self?.shouldShowSpinner = false

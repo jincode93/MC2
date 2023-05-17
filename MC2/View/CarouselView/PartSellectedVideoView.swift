@@ -9,13 +9,13 @@ import SwiftUI
 import AVKit
 
 struct PartSellectedVideoView: View {
-    @State var player: AVPlayer?
+    @StateObject var videoStore = VideoStore()
     var musicTitle: String
     var partIndex: Int
     
     var body: some View {
         ZStack {
-            if let player = player {
+            if let player = videoStore.player {
                 VideoPlayer(player: player)
                     .frame(maxWidth: UIScreen.main.bounds.width * 0.9)
                     .cornerRadius(20)
@@ -27,25 +27,11 @@ struct PartSellectedVideoView: View {
             }
         }
         .onAppear {
-            videoPlayer(resource: "\(musicTitle).\(partIndex)")
-            play()
+            videoStore.videoPlayer(resource: "\(musicTitle).\(partIndex)", isMuted: false, repeatVideo: true)
+            videoStore.play()
         }
         .onDisappear {
-            pause()
+            videoStore.pause()
         }
-    }
-    
-    func videoPlayer(resource: String, widthExtension: String = "mov") {
-        if let url = Bundle.main.url(forResource: resource, withExtension: widthExtension) {
-            player = AVPlayer(url: url)
-        }
-    }
-    
-    func play() {
-        player?.play()
-    }
-    
-    func pause() {
-        player?.pause()
     }
 }

@@ -9,10 +9,10 @@ import SwiftUI
 
 struct AnimatedImageFrameView: View {
     let images: [UIImage]
-    let duration: TimeInterval
+    @State var duration: TimeInterval
     
     var body: some View {
-        AnimatedImageView(images: images, duration: duration)
+        AnimatedImageView(images: images, duration: $duration)
             .aspectRatio(contentMode: .fill)
     }
 }

@@ -10,13 +10,14 @@ import Combine
 import AVFoundation
 
 struct CameraView: View {
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dismiss) private var dismiss
     @EnvironmentObject var model: CameraModel
     @EnvironmentObject var viewRouter: ViewRouter
     @EnvironmentObject var danceStore: DanceStore
     @EnvironmentObject var cameraStore: CameraModel
-    @State var selectedPart: DancePart?
-    @State var danceFrame: UIImage = UIImage()
+    @State var dancePart: DancePart
+    @State var music: Music
+    @State var danceFrame: UIImage
     @State var timer: Double = 5.0
     @State var tabSelect: Int = 1
     @State var isbuttonOpacity: Bool = false
@@ -63,7 +64,7 @@ struct CameraView: View {
                             .scaledToFit()
                             .frame(width: UIScreen.main.bounds.width)
                             .opacity(cameraStore.guideViewToggle ? 0 : 1)
-                            .zIndex(2)
+                            .zIndex(1)
                         
                         VStack {
                             Spacer()
@@ -92,8 +93,7 @@ struct CameraView: View {
                                 
                                 for i in 1...7 {
                                     DispatchQueue.main.asyncAfter(deadline: .now() + timer * Double(i)) {
-                                        danceFrame = danceStore.selectedDancePart?.danceFrameImage[i] ?? UIImage()
-                                        print("Frame Change")
+                                        danceFrame = dancePart.danceFrameImage[i]
                                     }
                                 }
                                 
@@ -114,6 +114,7 @@ struct CameraView: View {
                                 }
                             }
                         }
+                        .zIndex(3)
                         .frame(height: 150)
                         .offset(y: UIScreen.main.bounds.height * 17 / 60)
                         .opacity(cameraStore.guideViewToggle ? 0 : 1)
@@ -122,20 +123,20 @@ struct CameraView: View {
                 }
             }
             .onAppear {
-                danceFrame = danceStore.selectedDancePart?.danceFrameImage[0] ?? UIImage()
+                danceFrame = dancePart.danceFrameImage[0]
             }
             .onDisappear {
                 cameraStore.guideViewToggle = true
             }
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(
-                leading:
-                    Button(action: {
-                        presentationMode.wrappedValue.dismiss()
-                    }, label: {
-                        Image(systemName: "chevron.left")
-                            .foregroundColor(.cyan)
-                    }),
+//                leading:
+//                    Button(action: {
+//                        viewRouter.currentPage = "page4"
+//                    }, label: {
+//                        Image(systemName: "chevron.left")
+//                            .foregroundColor(.cyan)
+//                    }),
                 trailing:
                     HStack(spacing: 20) {
                         Button {

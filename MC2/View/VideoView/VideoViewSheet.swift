@@ -9,10 +9,9 @@ import SwiftUI
 import AVKit
 
 struct VideoViewSheet: View {
+    @StateObject var videoStore = VideoStore()
     @EnvironmentObject var danceStore: DanceStore
-    @EnvironmentObject var videoStore: VideoStore
-    
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dismiss) private var dismiss
     
     @State var music: Music
     @State var dancePart: DancePart
@@ -26,7 +25,7 @@ struct VideoViewSheet: View {
                 HStack {
                     Spacer()
                     Button {
-                        presentationMode.wrappedValue.dismiss()
+                        dismiss()
                     } label: {
                         Image(systemName: "xmark")
                             .font(.headline)
@@ -78,6 +77,7 @@ struct VideoViewSheet: View {
             .navigationBarBackButtonHidden(true)
         }
         .onAppear {
+            videoStore.videoPlayer(resource: "\(music.musicTitle).\(dancePart.partIndex)", isMuted: false, repeatVideo: true)
             videoStore.play()
         }
         .onDisappear {

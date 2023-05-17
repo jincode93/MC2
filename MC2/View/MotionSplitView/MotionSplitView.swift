@@ -11,7 +11,7 @@ struct MotionSplitView: View {
     @EnvironmentObject var viewRouter: ViewRouter
     @EnvironmentObject var danceStore: DanceStore
     @EnvironmentObject var videoStore: VideoStore
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dismiss) private var dismiss
     
     @State var music: Music
     @State var dancePart: DancePart
@@ -36,25 +36,24 @@ struct MotionSplitView: View {
                 
                 Spacer()
                 
-                Button {
-                    viewRouter.currentPage = "page5"
+                NavigationLink {
+                    CameraView(dancePart: dancePart, music: music, danceFrame: dancePart.danceFrameImage[0])
                 } label: {
                     Text("촬영하기")
                         .modifier(LongButtonModifier())
                 }
             }
         }
-        .onAppear {
-            videoStore.videoPlayer(resource: "\(music.musicTitle).\(dancePart.partIndex)", isMuted: false, repeatVideo: true)
-        }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(
             leading:
                 Button(action: {
-                    presentationMode.wrappedValue.dismiss()
+                    dismiss()
                 }, label: {
                     Image(systemName: "chevron.left")
-                        .foregroundColor(.cyan)
+                        .font(.title3)
+                        .foregroundColor(.stringColor)
+                        .bold()
                 }),
             trailing:
                 Button(action: {
@@ -67,16 +66,8 @@ struct MotionSplitView: View {
                     }
                 })
         )
-        .toolbar {
-            ToolbarItem(placement: .principal) {
-                VStack {
-                    Text("한 동작씩 쪼개보기")
-                        .font(.title3)
-                        .foregroundColor(.white)
-                        .bold()
-                }
-            }
-        }
+        .navigationTitle(Text("한 동작씩 쪼개보기"))
+        .navigationBarTitleDisplayMode(.inline)
         .sheet(isPresented: $isSheetUp) {
             VideoViewSheet(music: music, dancePart: dancePart)
         }

@@ -11,7 +11,7 @@ struct GalleryView: View {
     @EnvironmentObject var userStore: UserStore
     @EnvironmentObject var viewRouter: ViewRouter
     @EnvironmentObject var dataManager: DataManager
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dismiss) private var dismiss
     
     let columns: [GridItem] = [
             GridItem(.flexible(), spacing: 15, alignment: nil),
@@ -27,7 +27,7 @@ struct GalleryView: View {
                           alignment: .center,
                           spacing: 0) {
                     ForEach(dataManager.resultArr) { result in
-                        AnimatedImageFrameView(images: result.imageArr, duration: 2.5)
+                        GalleryFrameView(images: result.imageArr, duration: 2.5)
                             .scaledToFill()
                             .frame(width: UIScreen.main.bounds.width * 0.45, height: UIScreen.main.bounds.height * 0.3)
                             .cornerRadius(20)
@@ -36,20 +36,15 @@ struct GalleryView: View {
                 }
             }
             .navigationBarItems(leading: Button(action: {
-                presentationMode.wrappedValue.dismiss()
+                dismiss()
             }, label: {
                 Image(systemName: "chevron.left")
                     .foregroundColor(.stringColor)
             })
             )
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    VStack {
-                        Text("갤러리")
-                            .modifier(TitleModifier())
-                    }
-                }
-            }
+            .navigationBarBackButtonHidden(true)
+            .navigationTitle(Text("갤러리"))
+            .navigationBarTitleDisplayMode(.inline)
             .onAppear {
                 dataManager.fetchFinalResults()
             }

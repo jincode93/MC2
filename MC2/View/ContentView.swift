@@ -27,20 +27,20 @@ struct ContentView: View {
                 SplashView()
             case "page2":
                 OnboardingView()
-            case "page3":
-                SignInView()
+//            case "page3":
+//                SignInView()
             case "page4":
                 MainView()
-            case "page5":
-                CameraView(selectedPart: danceStore.selectedDancePart ?? nil)
+//            case "page5":
+//                CameraView(selectedPart: danceStore.selectedDancePart ?? nil)
             case "page6":
                 GifView()
             case "page7":
                 SendToDBProgressView()
             case "page8":
                 GalleryView()
-            case "signUpProgress":
-                SignUpProgressView()
+//            case "signUpProgress":
+//                SignUpProgressView()
             default:
                 Text("Error: Invalid Page")
             }

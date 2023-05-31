@@ -38,35 +38,38 @@ struct GifView: View {
                 
                 Spacer()
                 
-                HStack {
-                    Button {
-                        showingAlert.toggle()
-                    } label: {
-                        Text("RETRY")
-                            .modifier(SortButtonModifier())
-                    }
-                    .alert(isPresented: $showingAlert) {
-                        let button = Alert.Button.default(Text("다시 촬영하기")) {
-                            viewRouter.currentPage = "page5"
-                        }
-                        return Alert(title: Text("다시 촬영하시겠습니까?"),
-                                     message: Text("기존에 촬영한 사진은 삭제됩니다."),
-                                     primaryButton: button, secondaryButton: .default(Text("취소")))
-                    }
-                    
-                    Spacer()
-                    
+//                HStack {
+//                    Button {
+//                        showingAlert.toggle()
+//                    } label: {
+//                        Text("RETRY")
+//                            .modifier(SortButtonModifier())
+//                    }
+//                    .alert(isPresented: $showingAlert) {
+//                        let button = Alert.Button.default(Text("다시 촬영하기")) {
+//                            viewRouter.currentPage = "page5"
+//                        }
+//                        return Alert(title: Text("다시 촬영하시겠습니까?"),
+//                                     message: Text("기존에 촬영한 사진은 삭제됩니다."),
+//                                     primaryButton: button, secondaryButton: .default(Text("취소")))
+//                    }
+//
+//                    Spacer()
+//
                     Button {
                         Task {
                             viewRouter.currentPage = "page7"
                             dataManager.saveFinalResult(id: UUID().uuidString, musicTitle: danceStore.selectedMusic?.musicTitle ?? "", partIndex: danceStore.selectedDancePart?.partIndex ?? 0, imageArr: imageArray)
                         }
                     } label: {
-                        Text("GALLERY")
-                            .modifier(SortButtonModifier(foregroundColor: .pointColor))
+                        Text("저장 후 완료")
+                            .modifier(LongButtonModifier(backgroundColor: .pointColor, foregroundColor2: .black))
+                        
+                            // .modifier(SortButtonModifier(foregroundColor: .pointColor))
                     }
-                }
-                .padding(.horizontal, 10)
+                    .padding(.horizontal, 10)
+                //}
+                
             }
             .padding(.vertical, 20)
         }

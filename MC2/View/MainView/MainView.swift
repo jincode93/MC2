@@ -11,11 +11,11 @@ struct MainView: View {
     @EnvironmentObject var viewRouter: ViewRouter
     @EnvironmentObject var userStore: UserStore
     @EnvironmentObject var danceStore: DanceStore
-    @State var isSelected: DanceLevel = .EASY
+    @State var isSelected: DanceLevel = .ALL
     private var filteredMusic: [Music] {
         switch isSelected {
         case .ALL:
-            return danceStore.music
+            return danceStore.music.sorted { $0.dancePartArr.count > $1.dancePartArr.count }
         case .EASY:
             return danceStore.music.filter { $0.danceLevel == "Easy" }
         case .NORMAL:
@@ -24,9 +24,10 @@ struct MainView: View {
             return danceStore.music.filter { $0.danceLevel == "Hard" }
         }
     }
+    @State var path: [Int] = [0, 1, 2, 3]
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack {
                 Color.black.ignoresSafeArea()
                 
@@ -109,8 +110,8 @@ struct MainView: View {
                                 .modifier(NavItemModifier())
                         }
 
-                        NavigationLink {
-                            GalleryView()
+                        Button {
+                            viewRouter.currentPage = "page8"
                         } label: {
                             Image(systemName: "photo.stack.fill")
                                 .modifier(NavItemModifier())

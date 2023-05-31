@@ -14,7 +14,7 @@ struct CameraProgressBar: View {
         HStack {
             ForEach(0...7, id: \.self) { index in
                 Rectangle()
-                    .fill(cameraStore.progressCheck >= index ? Color.pointColor : Color.white)
+                    .fill(cameraStore.progressCheck > index ? Color.pointColor : Color.white)
                     .frame(height: 10)
                     .tag(index)
                 

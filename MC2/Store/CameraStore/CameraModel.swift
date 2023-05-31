@@ -89,17 +89,12 @@ final class CameraModel: ObservableObject {
         for i in 1...8 {
             DispatchQueue.main.asyncAfter(deadline: .now() + (timer * Double(i))) {
                 self.service.capturePhoto()
-                print("capturePhoto")
+                print("@Log capturePhoto")
                 self.progressCheck += 1
                 if i <= 7 {
                     self.textChanger()
                 }
             }
-            
-//            DispatchQueue.main.asyncAfter(deadline: .now() + (timer * Double(i)) + 4.0) {
-//                self.images.append(self.service.images[i - 1])
-//                print("@Log \(self.images.count)")
-//            }
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + (timer * 8.0) + 4.0) {

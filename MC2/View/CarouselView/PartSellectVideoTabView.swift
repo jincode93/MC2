@@ -19,6 +19,7 @@ struct PartSellectVideoTabView: View {
     let music: Music
     @State var dancePart: DancePart = DancePart(id: "", partIndex: 0, partMusic: "", dancePauseImage: [], danceFrameImage: [], danceVideo: "")
     
+    
     var body: some View {
         ZStack {
             Color.black.ignoresSafeArea()
@@ -94,9 +95,15 @@ struct PartSellectVideoTabView: View {
             if !music.dancePartArr.isEmpty {
                 dancePart = music.dancePartArr[0]
             }
+            DispatchQueue.main.async {
+                danceStore.selectedMusic = self.music
+            }
         }
         .onChange(of: currentTab, perform: { newValue in
             dancePart = music.dancePartArr[newValue]
+            DispatchQueue.main.async {
+                danceStore.selectedDancePart = music.dancePartArr[newValue]
+            }
         })
         .navigationBarItems(
             leading:

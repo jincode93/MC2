@@ -338,6 +338,10 @@ public class CameraService {
             self.isCameraButtonDisabled = true
             
             sessionQueue.async {
+                if self.images.count == 8 {
+                    self.images = []
+                }
+                
                 if let photoOutputConnection = self.photoOutput.connection(with: .video) {
                     photoOutputConnection.videoOrientation = .portrait
                 }

@@ -18,6 +18,7 @@ struct Result: Identifiable {
 class DataManager: ObservableObject {
     @Published var finalResults: [FinalResult] = []
     @Published var resultArr: [Result] = []
+    @Published var isSaveCheck: Bool = true
     
     private let viewContext = PersistenceController.shared.container.viewContext
     
@@ -33,7 +34,7 @@ class DataManager: ObservableObject {
         
         do {
             try viewContext.save()
-            fetchFinalResults()
+            isSaveCheck = true
         } catch {
             // 저장 중 에러 처리
         }
@@ -41,10 +42,8 @@ class DataManager: ObservableObject {
     
     // 데이터 불러오기
     func fetchFinalResults() {
-        DispatchQueue.main.async {
-            self.finalResults = []
-        }
-        
+        self.finalResults = []
+
         let fetchRequest: NSFetchRequest<FinalResult> = FinalResult.fetchRequest()
         
         do {
@@ -56,16 +55,13 @@ class DataManager: ObservableObject {
                 self.tranceResult(result: result)
             }
             
+            isSaveCheck = false
         } catch {
             // 불러오기 중 에러 처리
         }
     }
     
     func tranceResult(result: FinalResult) {
-        DispatchQueue.main.async {
-            self.resultArr = []
-        }
-        
         let id: String = result.id ?? ""
         let musicTitle: String = result.musicTitle ?? ""
         let partIndex: Int = Int(result.partIndex)
@@ -78,8 +74,7 @@ class DataManager: ObservableObject {
         
         let result = Result(id: id, musicTitle: musicTitle, partIndex: partIndex, imageArr: imageArr)
         
-        DispatchQueue.main.async {
-            self.resultArr.append(result)
-        }
+        self.resultArr.append(result)
+        print("@Log CoreData Count: \(self.resultArr.count)")
     }
 }

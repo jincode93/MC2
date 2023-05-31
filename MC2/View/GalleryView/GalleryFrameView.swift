@@ -9,7 +9,7 @@ import SwiftUI
 
 struct GalleryFrameView: View {
     let images: [UIImage]
-    @State var duration: TimeInterval
+    @Binding var duration: TimeInterval
     
     var body: some View {
         GalleryDetailView(images: images, duration: $duration)
